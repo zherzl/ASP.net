@@ -14,7 +14,7 @@ namespace eBudgetPro.Controllers
     public class GetHomeData : MyBaseController// Inherit from controller only to get access to user id or Json
     {
 
-        // Method called on page load
+        // Method called on page load bla
         public Dictionary<string, decimal> SumBalanceDict(List<Saldo> balanceList)
         {
             Dictionary<string, decimal> dict = new Dictionary<string, decimal>();
