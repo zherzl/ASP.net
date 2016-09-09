@@ -17,7 +17,7 @@ namespace MVC_LoadDataOnMouseScroll.Models
         [Key]
         public int IDGrad { get; set; }
 
-        [StringLength(50)]
+        [StringLength(55)]
         public string Naziv { get; set; }
 
         public int? DrzavaID { get; set; }
