@@ -9,7 +9,6 @@ namespace MVC_LoadDataOnMouseScroll.Models
     [Table("Grad")]
     public partial class Grad
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Grad()
         {
             Kupac = new HashSet<Kupac>();
