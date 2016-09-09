@@ -12,7 +12,7 @@ namespace eBudgetPro.Controllers
     public class ChartController : MyBaseController
     {
 
-        // Method returns data for main chart on index page
+        // Method returns data for main chart on index pages
         public ActionResult GetAmountsJson(string myCurrency)
         {
             GetHomeData getData = new GetHomeData();
