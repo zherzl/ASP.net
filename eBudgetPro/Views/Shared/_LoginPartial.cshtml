@@ -1,0 +1,57 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+        </li>
+        
+        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+
+        <li>
+            <div class="btn-group">
+                @*<a href="#" class="btn btn-default">8</a>*@
+                    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        @eBudgetPro.ResourcesFolder.Resource.ChooseYourLanguage
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu ">
+                        @foreach (var item in eBudgetPro.SiteLanguages.AvailableLanguages)
+                        {
+                            <li>
+                                @Html.ActionLink(" ", "ChangeLanguage", "Home", new { lang = item.LangCultureName }, new { @class = item.LangClassName }) @*<text>&nbsp;&nbsp;</text>*@
+                            </li>
+                        }
+                    </ul>
+            </div>
+
+        </li>
+       
+
+
+    </ul>
+
+    
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+        
+        @foreach (var item in eBudgetPro.SiteLanguages.AvailableLanguages)
+        {
+            <li>
+                @Html.ActionLink(item.LangFullName, "ChangeLanguage", "Home", new { lang = item.LangCultureName }, new { @class = item.LangCultureName }) <text>&nbsp;&nbsp;</text>
+            </li>
+        }
+    </ul>
+}
+
+
+        

@@ -1,0 +1,159 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+a.en-US {
+    background: url( ../Images/en-US.jpg) no-repeat;
+    display: block;
+    width: 72px;
+    height: 47px;
+    /*text-indent: -9999px;*/ /* hides the link text */
+}
+
+a.hr-HR {
+    background: url(../Images/hr.jpg) no-repeat;
+    display: block;
+    width: 72px;
+    height: 47px;
+    /*text-indent: -9999px;*/ /* hides the link text */
+}
+
+
+
+.table > thead > tr > td.myInfo,
+.table > tbody > tr > td.myInfo,
+.table > tfoot > tr > td.myInfo,
+.table > thead > tr > th.myInfo,
+.table > tbody > tr > th.myInfo,
+.table > tfoot > tr > th.myInfo,
+.table > thead > tr.myInfo:nth-child(2n+1) > td,
+.table > tbody > tr.myInfo:nth-child(2n+1) > td,
+.table > tfoot > tr.myInfo > td,
+.table > thead > tr.myInfo > th,
+.table > tbody > tr.myInfo > th,
+.table > tfoot > tr.myInfo > th {
+    background-color: #d9edf7;
+}
+
+.containerNarrow {
+    width: 100%;
+}
+
+/*.table-hover > tbody > tr > td.myInfo:hover,
+.table-hover > tbody > tr > th.myInfo:hover,
+.table-hover > tbody > tr.myInfo:hover > td,
+.table-hover > tbody > tr:hover > .myInfo,
+.table-hover > tbody > tr.myInfo:hover > th {
+  background-color: #c4e3f3;
+}*/
+
+
+
+
+
+
+div#tooltip {
+    font-size: 1.1em;
+    color: white;
+    position: absolute;
+    background-color: #000;
+    border: 1px solid #727272;
+    padding: 2px;
+    border-radius: 5px;
+    border-color: transparent;
+    width: 120px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-break: auto;
+    line-height: 1.42857143;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    white-space: normal;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: hyphenate;
+    opacity: 0.8;
+}
+
+
+
+.kolone {
+    -moz-column-count: 3;
+    -moz-column-gap: 17px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 17px;
+    column-count: 3;
+    column-gap: 17px;
+}
+
+.easeAnim {
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+#transition-example:hover {
+    -webkit-transition: all 100ms ease-in-out;
+    -moz-transition: all 100ms ease-in-out;
+    -ms-transition: all 100ms ease-in-out;
+    -o-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+}
+
+input[type="button"]:hover {
+    -moz-transform: scale(1.5) rotate(2deg);
+    -webkit-transform: scale(1.5) rotate(2deg);
+    -o-transform: scale(1.5) rotate(2deg);
+    -ms-transform: scale(1.5) rotate(2deg);
+    transform: scale(1.5) rotate(2deg);
+    transition: all 150ms ease-in;
+    z-index:9999;
+    position:relative;
+}
+
+input[type="button"] {
+    -moz-transform: scale(1.0) rotate(0deg);
+    -webkit-transform: scale(1.0) rotate(0deg);
+    -o-transform: scale(1.0) rotate(0deg);
+    -ms-transform: scale(1.0) rotate(0deg);
+    transform: scale(1.0) rotate(0deg);
+    transition: all 200ms ease-out;
+    z-index:-1;
+}
+
+
+
+
+
+
+
+
+

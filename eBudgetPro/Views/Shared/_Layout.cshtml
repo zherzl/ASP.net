@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - eBudget Pro</title>
+    <link rel="shortcut icon" href="~/Images/favicon.ico" />
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery-ui-1.11.4.js"></script>
+
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                @Html.ActionLink(@eBudgetPro.ResourcesFolder.Resource.ApplicationName, "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink(@eBudgetPro.ResourcesFolder.Resource.LinkHome, "Index", "Home")</li>
+                    <li>@Html.ActionLink(@eBudgetPro.ResourcesFolder.Resource.LinkAbout, "ChartStatistics", "Chart")</li>
+                    <li>@Html.ActionLink(@eBudgetPro.ResourcesFolder.Resource.LinkAddCategory, "AddCategory", "Data")</li>
+                    <li>@Html.ActionLink(@eBudgetPro.ResourcesFolder.Resource.LinkAddAmount, "AddAmount", "Data")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+                
+                
+            </div>
+            <div class="navbar-collapse collapse">
+
+                @*Language switcher*@
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="container containerNarrow ">
+        @RenderBody()
+        <hr />
+        <div style="text-align:center">
+            <footer>
+                <p>&copy; @DateTime.Now.Year -eBudget Pro</p>
+            </footer>
+        </div>
+
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+@*<script src="~/Scripts/jquery.js"></script>*@
+<script src="~/Scripts/jquery.flot.js"></script>
+<script src="~/Scripts/flot/jquery.flot.time.js"></script>
+<script src="~/Scripts/flot/jquery.flot.categories.js"></script>
+
+<script>
+    window.onload = function MyFunction() {
+
+        
+
+
+        $("#homeTab, #aboutTab, #contactTab").on("click", function HomeTabSelectionChange() {
+            var id = $(this).val();
+            //alert('It\'s home or about');
+            //AjaxCall(this);
+        });
+
+
+
+        function AjaxCall(clickedTab) {
+
+            var id = clickedTab.id;
+            var controller;
+            var action;
+
+            if (id == "homeTab") {
+                //alert('It\'s a home tab');
+                controller = "Home";
+                action = "Index";
+            }
+            else if (id == "aboutTab") {
+                //alert('It\'s a about tab');
+                controller = "Home";
+                action = "About";
+            }
+            else if (id == "contactTab") {
+                //alert('It\'s a contact tab');
+                controller = "Home";
+                action = "Contact";
+            }
+
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("Index", "Home")',
+                success: function GoHome() {
+                    window.location.href = "/" + controller + "/" + action;
+                },
+                // Error
+                error: function (xhr, ajaxOptions, error) {
+                    alert(error);
+                }
+            })
+        }
+    }
+</script>

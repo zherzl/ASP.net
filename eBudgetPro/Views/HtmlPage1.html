@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0035)http://www.klaus.dk/404040404040404 -->
+<html xmlns="http://www.w3.org/1999/html">
+<script type="text/javascript">
+    window["_gaUserPrefs"] = {
+        ioo: function ()
+        {
+            var greska = DohvatiParametarPoNazivu('error'); // "lorem"
+            //text += "¤½LOAD\"/" + greska + "\",8§\n";
+
+            text += "¤½LOAD\"/404040404040404\",8§\n" +
+                    "SEARCHING FOR /404040404040404¤\n" +
+                    "?FILE NOT FOUND  ERROR\nREADY.\n" + loadlist +
+                    //				 "¤ \n½Fuck! What do I do?§\n" +
+                    //	       "?SYNTAX ERROR\n" +
+                    //	       "READY.\n" +
+                    //				 "¤¤¤¤¤¤¤¤¤¤¤½Still here? Cool..§\n" +
+                    //				 "?YEAH.. GET LOST!\n" +
+                    //				 "READY.\n" +
+                    //	       "¤½Ok...¤......§\n" +
+                    //				 "!THANK YOU\n" +
+                    "READY.\n" +
+                    "¤¤¤¤¤¤¤¤¤¤¤¤¤½SYS 64738¤°" +
+                    "" +
+                    "";
+
+            //text += greska;
+            return true;
+        }
+    }
+</script>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+    <script language="javascript" type="text/javascript" src="./404040404040404_files/jquery.js"></script>
+    <style type="text/css"></style>
+    <link rel="stylesheet" href="./404040404040404_files/c64charset.css" type="text/css" media="screen">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        /* body { background:#7b73de url(/404/c64.gif) no-repeat center 50px scroll; } */
+        body {
+            background: #7b73de;
+        }
+
+
+        #c64background {
+            height: 400px;
+            width: 640px;
+            background: #3931a5;
+        }
+
+        .cont {
+            text-align: left;
+            margin-top: 168px;
+            width: 640px;
+            color: #7b73de;
+            font-family: verdana;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #ursor {
+            position: relative;
+            top: -0px;
+            left: -3px;
+            color: #7b73de;
+            background: #7b73de;
+            width: 20px;
+            height: 21px;
+            font-size: 1px;
+            display: block;
+        }
+
+        #cursor {
+            position: absolute;
+            top: 168px;
+            color: #7b73de;
+            background: #7b73de;
+            width: 16px;
+            height: 16px;
+            font-size: 1px;
+            display: block;
+        }
+
+        kbd {
+            float: left;
+            displa: none;
+        }
+    </style>
+
+    <script language="JavaScript">
+        // c64 404 page not found by Klaus Hessellund / 200709
+        // Feel free to copy this script to you own page. Some credits would be nice, but not mandatory :p
+        // c64 charset found here : http://www.dwarffortresswiki.net/index.php/List_of_user_tilesets
+
+        $(function () {
+           // Ovo mi možda ne treba 
+        });
+
+        function DohvatiParametarPoNazivu(name, url) {
+            if (!url)
+                url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "i"),
+                    results = regex.exec(url);
+            if (!results)
+                return null;
+            if (!results[2])
+                return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        var loadlist;
+        loadlist = "½LOAD\"$\",§8\n";
+        loadlist += "SEARCHING FOR $\nLOADING¤\nREADY.\n";
+        loadlist += "½¤LIST§\n";
+        loadlist += "0 \"TEST DISK       \" 23 2A\n";
+        loadlist += "20   \"FOO\"               PRG\n";
+        loadlist += "3    \"BAR\"               PRG\n";
+        loadlist += "641 BLOCKS FREE.\n";
+
+
+
+        var text;
+        text = "§ \n";
+        text += "§    **** COMMODORE 64 BASIC V2 ****\n \n";
+        text += " 64K RAM SYSTEM  38911 BASIC BYTES FREE\n \n";
+        text += "READY.\n";
+        // Ovdje komentiram i uzimam javascriptom pišem što želim
+        text += "¤½LOAD\"/404040404040404\",8§\n" +
+                "SEARCHING FOR /404040404040404¤\n" +
+                "?FILE NOT FOUND  ERROR\nREADY.\n" + loadlist +
+                //				 "¤ \n½Fuck! What do I do?§\n" +
+                //	       "?SYNTAX ERROR\n" +
+                //	       "READY.\n" +
+                //				 "¤¤¤¤¤¤¤¤¤¤¤½Still here? Cool..§\n" +
+                //				 "?YEAH.. GET LOST!\n" +
+                //				 "READY.\n" +
+                //	       "¤½Ok...¤......§\n" +
+                //				 "!THANK YOU\n" +
+                "READY.\n" +
+                "¤¤¤¤¤¤¤¤¤¤¤¤¤½SYS 64738¤°" +
+                "" +
+                "";
+
+        var textlen = text.length;
+        var textidx = 0;
+        var fontwidth = 16;
+        var typing = 1;
+        var pause = 0;
+        var reset = 0;
+
+        function parsechar(c) {
+            movecursor = 1;
+            if (c == ' ') {
+                c = 'space';
+            } else if (c == 'Ø') {
+                c = 'OE';
+            } else if (c == 'Å') {
+                c = 'AA';
+            } else if (c == '.') {
+                c = 'dot';
+            } else if (c == '*') {
+                c = 'star';
+            } else if (c == '$') {
+                c = 'dollar';
+            } else if (c == '/') {
+                c = 'slash';
+            } else if (c == '"') {
+                c = 'quot';
+            } else if ((c > 0 && c <= 9)) {
+                c = 'n' + c;
+            } else if ((c == '0')) {
+                c = 'n' + c;
+            } else if (c == ',') {
+                c = 'comma';
+            } else if (c == '!') {
+                c = 'att';
+            } else if (c == '?') {
+                c = 'question';
+            } else if (c == '_') {
+                c = 'underscore';
+            } else if (c == '\'') {
+                c = 'singlequot';
+            } else if (c == ':') {
+                c = 'colon';
+            } else if (c == ';') {
+                c = 'semicolon';
+            } else if (c == '&') {
+                c = 'amp';
+            } else if (c == '=') {
+                c = 'equal';
+            } else if (c == '%') {
+                c = 'percent';
+            } else if (c == '+') {
+                c = 'plus';
+            } else if (c == '\n') {
+                c = 'newline';
+                movecursor = 0;
+            } else if (c == '°') {
+                reset = 1;
+                movecursor = 0;
+            } else if (c == '§') {
+                c = 'none';
+                typing = 0;
+                movecursor = 0;
+            } else if (c == '½') {
+                c = 'none';
+                typing = 1;
+                movecursor = 0;
+            } else if (c == '¤') {
+                c = 'none';
+                pause = 1;
+                movecursor = 0;
+            }
+
+            return (c);
+        }
+
+        var t;
+        var c;
+        var b;
+        var isie = $.browser.msie ? 1 : 0;
+
+        function writetext() {
+
+
+            if (reset) {
+                initWrite();
+                return;
+            }
+
+            var getchar = text.charAt(textidx);
+            c64char = '<div id="i' + textidx + '" class="' + parsechar(getchar) + '"></div>';
+            t.innerHTML = t.innerHTML + c64char;
+
+            var elid = 'i' + textidx;
+            var el = document.getElementById(elid);
+            var addwidth = movecursor ? fontwidth : 0;
+
+            var posarr = findPos(el);
+
+            var curleft = posarr[0] + addwidth;
+            var curtop = posarr[1];
+
+            if (textlen != textidx) {
+                textidx++;
+                c.style.top = curtop + 'px';
+                c.style.left = curleft + 'px';
+
+                if (typing) {
+                    if (randx(10) > 7) {
+                        rand = randx(700);
+                    } else {
+                        rand = randx(200);
+                    }
+                    fixedrand = 10;
+                } else {
+                    rand = 0;
+                    fixedrand = 0;
+                }
+                if (pause) {
+                    rand = 2000;
+                    pause = 0;
+                } else {
+                    flipcursor(1);
+                }
+
+                if (rand == 0) {
+                    writetext();
+                } else {
+                    setTimeout('writetext()', fixedrand + rand);
+                }
+
+            } else {
+
+            }
+        }
+
+        function findPos(obj) {
+            var fcurleft = fcurtop = 0;
+            if (obj.offsetParent) {
+                fcurleft = obj.offsetLeft
+                fcurtop = obj.offsetTop
+                while (obj = obj.offsetParent) {
+                    fcurleft += obj.offsetLeft
+                    fcurtop += obj.offsetTop
+                }
+            }
+
+            return [fcurleft, fcurtop];
+        }
+
+
+        function flipcursor(nosettime) {
+
+            var cursor = document.getElementById("cursor");
+
+            if (cursor.style.visibility == 'hidden') {
+                cursor.style.visibility = '';
+            } else {
+                cursor.style.visibility = 'hidden';
+            }
+            if (!nosettime) {
+                setTimeout('flipcursor()', 300);
+            }
+        }
+
+        function randx(n) {
+            return (Math.floor(Math.random() * n + 1));
+        }
+
+        function initWrite() {
+            t = document.getElementById("thetext");
+            c = document.getElementById("cursor");
+            b = document.getElementById("body");
+            t.innerHTML = "";
+            textidx = 0;
+            reset = 0;
+            writetext();
+            // flipbackground();
+        }
+
+        var bgflipped = 1;
+        function flipbackground() {
+            bgflipped ? b.style.background = "white" : b.style.background = "black";
+            bgflipped = bgflipped ? 0 : 1;
+            setTimeout('flipbackground()', 0);
+        }
+
+
+    </script>
+
+
+</head>
+
+    <body id="body" onload="flipcursor(0); initWrite();">
+        <center>
+            <div style="height:100px">&nbsp;<br><br><br></div>
+            <div id="c64background">
+                <div id="thetext"><div id="i0" class="none"></div><div id="i1" class="space"></div><div id="i2" class="newline"></div><div id="i3" class="none"></div><div id="i4" class="space"></div><div id="i5" class="space"></div><div id="i6" class="space"></div><div id="i7" class="space"></div><div id="i8" class="star"></div><div id="i9" class="star"></div><div id="i10" class="star"></div><div id="i11" class="star"></div><div id="i12" class="space"></div><div id="i13" class="C"></div><div id="i14" class="O"></div><div id="i15" class="M"></div><div id="i16" class="M"></div><div id="i17" class="O"></div><div id="i18" class="D"></div><div id="i19" class="O"></div><div id="i20" class="R"></div><div id="i21" class="E"></div><div id="i22" class="space"></div><div id="i23" class="n6"></div><div id="i24" class="n4"></div><div id="i25" class="space"></div><div id="i26" class="B"></div><div id="i27" class="A"></div><div id="i28" class="S"></div><div id="i29" class="I"></div><div id="i30" class="C"></div><div id="i31" class="space"></div><div id="i32" class="V"></div><div id="i33" class="n2"></div><div id="i34" class="space"></div><div id="i35" class="star"></div><div id="i36" class="star"></div><div id="i37" class="star"></div><div id="i38" class="star"></div><div id="i39" class="newline"></div><div id="i40" class="space"></div><div id="i41" class="newline"></div><div id="i42" class="space"></div><div id="i43" class="n6"></div><div id="i44" class="n4"></div><div id="i45" class="K"></div><div id="i46" class="space"></div><div id="i47" class="R"></div><div id="i48" class="A"></div><div id="i49" class="M"></div><div id="i50" class="space"></div><div id="i51" class="S"></div><div id="i52" class="Y"></div><div id="i53" class="S"></div><div id="i54" class="T"></div><div id="i55" class="E"></div><div id="i56" class="M"></div><div id="i57" class="space"></div><div id="i58" class="space"></div><div id="i59" class="n3"></div><div id="i60" class="n8"></div><div id="i61" class="n9"></div><div id="i62" class="n1"></div><div id="i63" class="n1"></div><div id="i64" class="space"></div><div id="i65" class="B"></div><div id="i66" class="A"></div><div id="i67" class="S"></div><div id="i68" class="I"></div><div id="i69" class="C"></div><div id="i70" class="space"></div><div id="i71" class="B"></div><div id="i72" class="Y"></div><div id="i73" class="T"></div><div id="i74" class="E"></div><div id="i75" class="S"></div><div id="i76" class="space"></div><div id="i77" class="F"></div><div id="i78" class="R"></div><div id="i79" class="E"></div><div id="i80" class="E"></div><div id="i81" class="newline"></div><div id="i82" class="space"></div><div id="i83" class="newline"></div><div id="i84" class="R"></div><div id="i85" class="E"></div><div id="i86" class="A"></div><div id="i87" class="D"></div><div id="i88" class="Y"></div><div id="i89" class="dot"></div><div id="i90" class="newline"></div><div id="i91" class="none"></div><div id="i92" class="none"></div><div id="i93" class="L"></div><div id="i94" class="O"></div><div id="i95" class="A"></div><div id="i96" class="D"></div><div id="i97" class="quot"></div><div id="i98" class="slash"></div><div id="i99" class="n4"></div><div id="i100" class="n0"></div><div id="i101" class="n4"></div><div id="i102" class="n0"></div><div id="i103" class="n4"></div><div id="i104" class="n0"></div><div id="i105" class="n4"></div><div id="i106" class="n0"></div><div id="i107" class="n4"></div><div id="i108" class="n0"></div><div id="i109" class="n4"></div><div id="i110" class="n0"></div><div id="i111" class="n4"></div><div id="i112" class="n0"></div><div id="i113" class="n4"></div><div id="i114" class="quot"></div><div id="i115" class="comma"></div><div id="i116" class="n8"></div><div id="i117" class="none"></div><div id="i118" class="newline"></div><div id="i119" class="S"></div><div id="i120" class="E"></div><div id="i121" class="A"></div><div id="i122" class="R"></div><div id="i123" class="C"></div><div id="i124" class="H"></div><div id="i125" class="I"></div><div id="i126" class="N"></div><div id="i127" class="G"></div><div id="i128" class="space"></div><div id="i129" class="F"></div><div id="i130" class="O"></div><div id="i131" class="R"></div><div id="i132" class="space"></div><div id="i133" class="slash"></div><div id="i134" class="n4"></div><div id="i135" class="n0"></div><div id="i136" class="n4"></div><div id="i137" class="n0"></div><div id="i138" class="n4"></div><div id="i139" class="n0"></div><div id="i140" class="n4"></div><div id="i141" class="n0"></div><div id="i142" class="n4"></div><div id="i143" class="n0"></div><div id="i144" class="n4"></div><div id="i145" class="n0"></div><div id="i146" class="n4"></div><div id="i147" class="n0"></div><div id="i148" class="n4"></div><div id="i149" class="none"></div><div id="i150" class="newline"></div><div id="i151" class="question"></div><div id="i152" class="F"></div><div id="i153" class="I"></div><div id="i154" class="L"></div><div id="i155" class="E"></div><div id="i156" class="space"></div><div id="i157" class="N"></div><div id="i158" class="O"></div><div id="i159" class="T"></div><div id="i160" class="space"></div><div id="i161" class="F"></div><div id="i162" class="O"></div><div id="i163" class="U"></div><div id="i164" class="N"></div><div id="i165" class="D"></div><div id="i166" class="space"></div><div id="i167" class="space"></div><div id="i168" class="E"></div><div id="i169" class="R"></div><div id="i170" class="R"></div><div id="i171" class="O"></div><div id="i172" class="R"></div><div id="i173" class="newline"></div><div id="i174" class="R"></div><div id="i175" class="E"></div><div id="i176" class="A"></div><div id="i177" class="D"></div><div id="i178" class="Y"></div><div id="i179" class="dot"></div><div id="i180" class="newline"></div><div id="i181" class="none"></div><div id="i182" class="L"></div><div id="i183" class="O"></div><div id="i184" class="A"></div><div id="i185" class="D"></div><div id="i186" class="quot"></div><div id="i187" class="dollar"></div><div id="i188" class="quot"></div><div id="i189" class="comma"></div></div>
+                <div id="cursor" style="top: 260px; left: 459px;">&nbsp;</div>
+            </div>
+        </center>
+    </body>
+</html>

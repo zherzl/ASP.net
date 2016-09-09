@@ -1,0 +1,191 @@
+﻿@using Microsoft.AspNet.Identity;
+@using eBudgetPro.Helpers;
+@using eBudgetPro.Models;
+
+@model eBudgetPro.Models.Amount
+
+@{
+    //var currDate = DateTime.Now.Date.ToString("yyyy-MM-dd");
+    int clear = 0;
+    if (ViewBag.clear != null) { 
+        clear = (int)ViewBag.clear;
+    }
+}
+@using (Html.BeginForm("AddAmount", "Data", FormMethod.Post, new { id = "forma" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+
+        @Html.Hidden("UserID", @User.Identity.GetUserId())
+        @if (Model != null)
+        {
+            @Html.Hidden("IDAmount", Model.IDAmount)
+        }
+        else
+        {
+            @Html.Hidden("IDAmount", 0)
+        }
+
+        <h4> @eBudgetPro.ResourcesFolder.Resource.IncomeExpenseEntryHeader </h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CategoryID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-4">
+                @*if Model contains data, we are here for edit (pass IDCategory for DropDown) - No Model means New Entry *@
+                @if (Model != null)
+                { 
+                    @Html.DropDownCategory(Model.CategoryID, "form-control");
+                }
+                else
+                {
+                    @Html.DropDownCategory(0, "form-control");
+                }
+                @Html.ValidationMessageFor(model => model.CategoryID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CurrencyID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @if (Model != null)
+                {
+                    @Html.DropDownCurrency(Model.CurrencyID, "form-control");
+                }
+                else
+                {
+                    @Html.DropDownCategory(0, "form-control");
+                }
+                @Html.ValidationMessageFor(model => model.CategoryID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AmountValue, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AmountValue, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AmountValue, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", @placeholder = eBudgetPro.ResourcesFolder.Resource.PlaceholderAmountDescr } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.InUse, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox checkbox-inline">
+                    @Html.EditorFor(model => model.InUse)
+                    @Html.ValidationMessageFor(model => model.InUse, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EntryDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EntryDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                @Html.ValidationMessageFor(model => model.EntryDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <br />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="@eBudgetPro.ResourcesFolder.Resource.BtnSave" class="btn btn-danger btn-md btn-block" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input id="btnSaveAjax" onclick="SaveAjax()" type="button" value="@eBudgetPro.ResourcesFolder.Resource.BtnSave Async" class="btn btn-danger btn-md btn-block" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("<< " + @eBudgetPro.ResourcesFolder.Resource.LinkHome, "Index", "Home")
+</div>
+
+
+<script>
+
+    var year;
+    var month;
+    var day;
+    var output;
+
+    $(function () {
+
+        // Get date from model and write to input-date
+        year = @Model.EntryDate.Year; //new Date();
+        month = @Model.EntryDate.Month; //date.getMonth() + 1;
+        day = @Model.EntryDate.Day; //date.getDate();
+                // Setting date input default value
+        output = //date.getFullYear() + "-" +
+            year + "-" +
+            (month < 10 ? '0' : '') + month + '-' +
+            (day < 10 ? '0' : '') + day;
+        
+        $("#EntryDate").val(output);
+
+
+    });
+    
+
+    // Save data using ajax and clear fields
+    function SaveAjax() {
+        var userID = $("#UserID").val();
+        var categoryID = $("#CategoryID").val();
+        var amountValue = $("#AmountValue").val();
+        var inUse = $("#InUse").is(":checked"); // .val() is not right way to take valu
+        var currencyID = $("#CurrencyID").val();
+        var descr = $("#Description").val();
+        var datum = $("#EntryDate").val();
+        var idAmount = $("#IDAmount").val();
+    
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("SaveDataAjax", "Data")',
+            data: { userID: userID, categoryID: categoryID, amountValue: amountValue, inUse: inUse, currencyID: currencyID, 
+                descr: descr, idAmount: idAmount, entryDate: datum },
+            success: function Success(result) {
+
+                alert('Podaci uspješno pohranjeni');
+            },
+            error: function Error(xhr, ajaxOptions, error) {
+                var forma = $("#forma");
+                forma.submit(); // Pozivamo refresh za prikaz validacije3
+                //alert('Greška. Podaci nisu snimljeni !');
+            }
+
+
+        });
+    }
+
+    //$(function bla() {
+    //    $("#entryDate").val(currDate);
+    //});
+
+    //$("#entryDate").datepicker("option", "showAnim", "slide");
+    //$("#entryDate").datepicker({
+    //    dateFormat: "dd.mm.yy"
+    //});
+</script>
+
+@*<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">*@
