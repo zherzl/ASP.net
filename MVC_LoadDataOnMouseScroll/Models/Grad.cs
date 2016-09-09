@@ -8,7 +8,7 @@ namespace MVC_LoadDataOnMouseScroll.Models
      
     [Table("Grad")]
     public partial class Grad
-    {
+    { 
         public Grad()
         {
             Kupac = new HashSet<Kupac>();
