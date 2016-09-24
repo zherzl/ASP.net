@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/ServiceLayer.Models.AdvModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ServiceLayer.Models.AdvModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:2960/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfGrad">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Grad" nillable="true" type="tns:Grad" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGrad" nillable="true" type="tns:ArrayOfGrad" />
+  <xs:complexType name="Grad">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Drzava" nillable="true" type="tns:Drzava" />
+      <xs:element minOccurs="0" name="DrzavaID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="IDGrad" type="xs:int" />
+      <xs:element minOccurs="0" name="Kupci" nillable="true" type="tns:ArrayOfKupac" />
+      <xs:element minOccurs="0" name="Naziv" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Grad" nillable="true" type="tns:Grad" />
+  <xs:complexType name="Drzava">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Gradovi" nillable="true" type="tns:ArrayOfGrad" />
+      <xs:element minOccurs="0" name="IDDrzava" type="xs:int" />
+      <xs:element minOccurs="0" name="Naziv" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Drzava" nillable="true" type="tns:Drzava" />
+  <xs:complexType name="ArrayOfKupac">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Kupac" nillable="true" type="tns:Kupac" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKupac" nillable="true" type="tns:ArrayOfKupac" />
+  <xs:complexType name="Kupac">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IDKupac" type="xs:int" />
+      <xs:element minOccurs="0" name="Ime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Prezime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Telefon" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Kupac" nillable="true" type="tns:Kupac" />
+</xs:schema>

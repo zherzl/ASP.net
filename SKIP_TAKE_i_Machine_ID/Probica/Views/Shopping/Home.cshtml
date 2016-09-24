@@ -1,0 +1,57 @@
+﻿@using Probica.Models;
+@model IEnumerable<Kupac>
+
+@{
+    ViewBag.Title = "Home";
+}
+<h2>Shopping home</h2>
+
+
+
+<div class="row">
+    <div class="col-lg-2">
+        <input id="btnUcitaj" class="btn btn-info btn-block" type="button" name="btnUcitaj" value="Učitaj još" />
+    </div>
+    <div class="col-lg-8 col-lg-offset-0">
+        <ol>
+            @foreach (Kupac k in Model)
+            {
+                <li id="@k.IDKupac">
+                    @Html.Partial("KupacDetail", @k)
+                </li>
+            }
+        </ol>
+
+    </div>
+</div>
+
+
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script>
+    var kolikoUcitati = 5;
+    var kolikoPreskociti = 5;
+
+    $(function () {
+        $("#btnUcitaj").click(function UcitajJosPOdataka() {
+            UcitajPrekoAjaxa();
+        });
+    });
+
+    function UcitajPrekoAjaxa() {
+
+        $.post('/Shopping/DajJosZapisa', { kolikoUcitati: 6, kolikoPreskociti: 3 }, function (result) {
+            alert(result);
+
+        });
+        return;
+        $.post('/Shopping/DajJosZapisa', { kolikoUcitati: kolikoUcitati, kolikoPreskociti: kolikoPreskociti }, function (result) {
+        alert('');
+
+            alert(result.IDKupac);
+            // Uvijek preskacemo podatke koje smo vec ucitali i pamtimo broj zapisa
+            kolikoPreskociti += kolikoPreskociti; 
+        });
+
+    }
+</script>

@@ -1,0 +1,36 @@
+﻿@using ObrisiMeMVC.Models;
+@model GlupaTablica
+@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+
+
+
+
+
+<div class="container">
+    <div class="row-fluid">
+        <table class="table table-striped">
+            <tr>
+                <th>Ime</th>
+                <th>Ime</th>
+                <th>Ime šefa</th>
+                <th>Prezime šefa</th>
+            </tr>
+
+            @foreach (GlupaTablica item in @Model.GlupaTablicaPodredenih)
+            {
+                <tr>
+                    <td> @item.Ime </td>
+                    <td> @item.Prezime </td>
+                    <td> @item.GlupaTablicaNadredenog.Ime </td>
+                    <td> @item.GlupaTablicaNadredenog.Prezime </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</div>

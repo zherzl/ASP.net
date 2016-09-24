@@ -1,0 +1,54 @@
+﻿@model Probica.Models.Kupac
+
+<style>
+    .slika {
+        width: 90px;
+        height: 90px;
+    }
+
+    .shadow {
+        -webkit-box-shadow: 1px 1px 9px 1px #C2C2C2;
+        box-shadow: 1px 1px 5px 1px #C2C2C2;
+        padding: 2px;
+        margin-bottom: 5px;
+    }
+
+    .fontUvecano {
+        font-size: 1.5em;
+        font-weight: 400;
+    }
+
+    td {
+        padding:7px;
+    }
+</style>
+
+
+<div class="shadow row">
+    <table>
+        <tr>
+            <td rowspan="2">
+                <img class="slika" src="~/Slike/Buyer.png" alt="Nema sliek" />
+            </td>
+            <td>
+                <p class="fontUvecano">
+                    @Model.Ime
+                </p>
+            </td>
+            <td>
+                <p class="fontUvecano">
+                    @Model.Prezime
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Grad: @Model.Grad.Naziv
+            </td>
+        </tr>
+    </table>
+
+    <div class="col-lg-3">
+    </div>
+
+</div>

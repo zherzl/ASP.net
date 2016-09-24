@@ -1,0 +1,61 @@
+﻿@using ObrisiMeMVC.Models;
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+
+<div class="container">
+
+    <div class="row-fluid">
+        <table id="tablicaDrzave1" class="table">
+            @foreach (Drzava d in @ViewBag.drzave1)
+            {
+                <tr>
+                    <td>@d.Naziv</td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="row-fluid">
+        <table id="tablicaDrzave2" class="table">
+            @foreach (Drzava d in @ViewBag.drzave2)
+            {
+                <tr>
+                    <td>@d.Naziv</td>
+                </tr>
+            }
+        </table>
+    </div>
+
+    
+
+    <div class="row-fluid">
+        <div id="podaci">
+            <table id="tablica" class="table">
+
+            </table>
+        </div>
+    </div>
+</div>
+<script src="~/assets/js/jquery.js"></script>
+<script type="text/javascript">
+    var tablica = $("#tablica");
+    
+    $(function () {
+        //return;
+        $.post('/Home/Gradovi', { id: 5 }, function (data) {
+            for (var i = 0; i < data.length; i++) {
+                var trStart = "<tr class='info'>";
+                var trEnd = "</tr>";
+                var tdStart = "<td>";
+                var tdEnd = "</td>";
+                //$(tablica).append(trStart + tdStart + data[i].Naziv + tdEnd + trEnd);
+            }
+        }, "type: json").done(function (request) {
+            alert(request);
+        });
+    });
+</script>

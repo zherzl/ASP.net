@@ -1,0 +1,11 @@
+﻿@using ObrisiME_MVC_EF_PovezaneTablice_Ajax.Models;
+@model IEnumerable<Grad>
+
+
+@foreach (var item in Model)
+{
+    <tr id="@item.IDGrad">
+        <td>@item.Naziv</td>
+        <td>@item.Drzava.Naziv</td>
+    </tr>
+}
