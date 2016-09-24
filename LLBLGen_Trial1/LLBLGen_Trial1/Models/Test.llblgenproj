@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--LLBLGen Pro v5.0 project file. Do not manually edit this file. Incorrect references could lead to an unloadable project file.-->
+<Project Version="5.0" TargetFrameworkName="LLBLGen Pro Runtime Framework">
+  <Properties>
+    <Abbreviations />
+    <Property Name="AdditionalTaskPerformerFolder" Value="" />
+    <Property Name="AdditionalTasksFolder" Value="" />
+    <Property Name="AdditionalTemplatesFolder" Value="" />
+    <Property Name="AdditionalTypeConverterFolder" Value="" />
+    <Property Name="AddNewElementsAfterRefresh_v5" Value="false" />
+    <Property Name="AddNewElementsAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="AddNewFieldsAfterRefresh_v5" Value="true" />
+    <Property Name="AddNewFieldsAfterRelationalModelDataSync_v5" Value="true" />
+    <Property Name="AddNewViewsAsEntitiesAfterRefresh_v5" Value="false" />
+    <Property Name="AddNewViewsAsEntitiesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="AutoAddManyToManyRelationships" Value="false" />
+    <Property Name="AutoAssignSequencesToIntegerPks" Value="true" />
+    <Property Name="AutoAssignTypeConverterToFieldMapping" Value="true" />
+    <Property Name="CleanUpVsNetProjects" Value="true" />
+    <Property Name="ConnectionStringKeyNamePattern" Value="ConnectionString.{$ProviderName}" />
+    <Property Name="DefaultDeleteRuleAction" Value="1" />
+    <Property Name="DefaultUpdateRuleAction" Value="0" />
+    <Property Name="EncodingToUse" Value="0" />
+    <Property Name="EntityActionCombinationDefaultForTable" Value="0" />
+    <Property Name="EntityActionCombinationDefaultForView" Value="4" />
+    <Property Name="EntityFieldNameStripPattern" Value="{}{}" />
+    <Property Name="EntityNameStripPattern" Value="{tbl_}{}" />
+    <Property Name="ExcludableOrphanedElementDetectedAction" Value="3" />
+    <Property Name="FailCodeGenerationOnWriteError" Value="false" />
+    <Property Name="FieldMappedOntoRelatedFieldPattern" Value="{$RelatedFieldName}" />
+    <Property Name="FkFieldsAreNamedAfterTargetField" Value="true" />
+    <Property Name="ForeignKeyConstraintPattern" Value="FK_{$Guid}" />
+    <Property Name="ForeignKeyFieldPattern" Value="{$NavigatorName}{$RelatedFieldName}" />
+    <Property Name="GroupUsage" Value="0" />
+    <Property Name="IdentifyingFieldsFollowDBPrimaryKeyConstraints_v5" Value="true" />
+    <Property Name="InsertUnderscoreAtWordBreakCaseInsensitiveDBs" Value="false" />
+    <Property Name="InsertUnderscoreAtWordBreakCaseSensitiveDBs" Value="false" />
+    <Property Name="LengthPrecisionScaleFollowDBLengthPrecisionScale_v5" Value="true" />
+    <Property Name="MakeElementNamePascalCasing" Value="true" />
+    <Property Name="NavigatorMappedOntoManyToManyPattern" Value="{$EndEntityName}CollectionVia{$IntermediateEntityName$S}" />
+    <Property Name="NavigatorMappedOntoOneManyToOnePattern" Value="{$EndEntityName$S}" />
+    <Property Name="NavigatorMappedOntoOneToManyPattern" Value="{$EndEntityName$P}" />
+    <Property Name="NonExcludableOrphanedElementDetectedAction" Value="3" />
+    <Property Name="PreferDecimalOverCurrencyTypes" Value="true" />
+    <Property Name="PreferNaturalCharacterTypes" Value="true" />
+    <Property Name="PreferSystemSequencesOverSchemaSequencesIfApplicable" Value="true" />
+    <Property Name="PreferVariableLengthTypes" Value="true" />
+    <Property Name="PrimaryKeyConstraintPattern" Value="PK_{$Guid}" />
+    <Property Name="ProjectCreator" Value="ZH" />
+    <Property Name="ProjectName" Value="Test" />
+    <Property Name="ReflectNullabilityOfElementFieldInTargetField_v5" Value="false" />
+    <Property Name="ReflectTypeOfElementFieldInTargetField_v5" Value="true" />
+    <Property Name="RelationalModelDataElementNameCasingCaseInsensitiveDBs" Value="3" />
+    <Property Name="RelationalModelDataElementNameCasingCaseSensitiveDBs" Value="3" />
+    <Property Name="RelationshipsFollowDBForeignKeyConstraints_v5" Value="true" />
+    <Property Name="RemoveUnderscoresFromElementName" Value="true" />
+    <Property Name="RemoveUnmappedElementsAfterRefresh_v5" Value="false" />
+    <Property Name="RemoveUnmappedElementsAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="ResetFieldOrderBasedOnTargetOrderAtRefresh" Value="false" />
+    <Property Name="ResetFieldOrderBasedOnTargetOrderAtRelationalModelDataSync" Value="false" />
+    <Property Name="RetrieveDBCustomProperties" Value="false" />
+    <Property Name="RootNamespace" Value="" />
+    <Property Name="SequenceNameMatchingPattern" Value="SEQ_{$TableName}" />
+    <Property Name="SequencePattern" Value="SEQ_{$EntityName}" />
+    <Property Name="SetGroupNameAfterSchemaName" Value="true" />
+    <Property Name="SetSchemaNameAfterGroupName" Value="true" />
+    <Property Name="SingularizeElementNames" Value="true" />
+    <Property Name="StoredProcNameStripPattern" Value="{pr_, sp_}{}" />
+    <Property Name="StoreTimeLastGeneratedIntoProject" Value="false" />
+    <Property Name="SyncMappedElementNamesAfterRefresh_v5" Value="false" />
+    <Property Name="SyncMappedElementNamesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="SyncRelationalModelDataElementNameWithModelElementName_v5" Value="false" />
+    <Property Name="SyncRenamedMappedElementNamesAfterRefresh_v5" Value="false" />
+    <Property Name="SyncRenamedMappedElementNamesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="TableValuedFunctionNameStripPattern" Value="{fn_, pr_, sp_}{}" />
+    <Property Name="TargetPerEntityEdgesRequireBackingFkConstraint" Value="true" />
+    <Property Name="TypedViewFieldNameStripPattern" Value="{}{}" />
+    <Property Name="TypedViewMappedOnResultsetPattern" Value="{$ProcFunctionName}{$ResultsetName}Result" />
+    <Property Name="TypedViewNameStripPattern" Value="{vw_}{}" />
+    <Property Name="UniqueConstraintPattern" Value="UC_{$Guid}" />
+    <Property Name="UniqueConstraintsFollowDBUniqueConstraints_v5" Value="true" />
+    <Property Name="UpdateCustomPropertiesAfterRefresh_v5" Value="false" />
+    <Property Name="UpdateCustomPropertiesAfterRelationalModelDataSync_v5" Value="false" />
+    <Property Name="UseCustomFieldOrderingOnNewElements" Value="false" />
+  </Properties>
+  <TypeShortcuts />
+  <IgnoredWarnings />
+  <SavedSearchQueries />
+  <CodeGenerationMetaDataDefaults>
+    <TargetElement Type="256">
+      <Defaults>
+        <Attributes>
+          <Attribute Value="Browsable($false)" />
+        </Attributes>
+      </Defaults>
+    </TargetElement>
+  </CodeGenerationMetaDataDefaults>
+  <EntityModel>
+    <ValueTypeDefinitions />
+    <EntityDefinitions>
+      <EntityDefinition Name="Drzava" GroupName="AdvWorks" ObjectID="7b15f7f5-1ae2-4222-9fc2-152aa36f557a">
+        <Fields>
+          <Field Name="CijenaDrzave" Type="decimal" Precision="19" Scale="4" />
+          <Field Name="Iddrzava" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
+          <Field Name="Naziv" Type="string" IsOptional="true" MaxLength="50" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="Grad" GroupName="Bla" ObjectID="29ea3eef-64c2-439b-8fd5-9594c6f89a3a">
+        <Fields>
+          <Field Name="DrzavaId" Type="int" IsOptional="true" Precision="10" />
+          <Field Name="Idgrad" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
+          <Field Name="Naziv" Type="string" IsOptional="true" MaxLength="50" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="Kategorija" GroupName="Bla" ObjectID="4aa0e331-cfb9-426b-82cd-e7c0c4eb688a">
+        <Fields>
+          <Field Name="Idkategorija" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
+          <Field Name="Naziv" Type="string" MaxLength="50" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="Komercijalist" GroupName="Bla" ObjectID="688f826e-431d-4810-a8be-a9f8f59e8858">
+        <Fields>
+          <Field Name="Idkomercijalist" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
+          <Field Name="Ime" Type="string" IsOptional="true" MaxLength="50" />
+          <Field Name="Prezime" Type="string" IsOptional="true" MaxLength="50" />
+          <Field Name="StalniZaposlenik" Type="bool" IsOptional="true" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="KreditnaKartica" GroupName="Bla" ObjectID="b3b168c8-91ee-450c-8af7-b306b5df0a87">
+        <Fields>
+          <Field Name="Broj" Type="string" MaxLength="25" />
+          <Field Name="IdkreditnaKartica" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
+          <Field Name="IstekGodina" Type="short" Precision="5" />
+          <Field Name="IstekMjesec" Type="byte" Precision="3" />
+          <Field Name="Tip" Type="string" MaxLength="50" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="Kupac" GroupName="Bla" ObjectID="dc31744b-4d83-4cbb-ac5a-9888499cf9ec">
+        <Fields>
+          <Field Name="Email" Type="string" IsOptional="true" MaxLength="50" />
+          <Field Name="GradId" Type="int" IsOptional="true" Precision="10" />
+          <Field Name="Idkupac" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
+          <Field Name="Ime" Type="string" MaxLength="50" />
+          <Field Name="Prezime" Type="string" MaxLength="50" />
+          <Field Name="Telefon" Type="string" IsOptional="true" MaxLength="25" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="Potkategorija" GroupName="Bla" ObjectID="25c10671-358c-4cb3-9d78-d8515a6015fe">
+        <Fields>
+          <Field Name="Idpotkategorija" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
+          <Field Name="KategorijaId" Type="int" Precision="10" />
+          <Field Name="Naziv" Type="string" MaxLength="50" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="Proizvod" GroupName="Bla" ObjectID="e811e005-38d3-4849-ac64-10bb9f246ef6">
+        <Fields>
+          <Field Name="Boja" Type="string" IsOptional="true" MaxLength="15" />
+          <Field Name="BrojProizvoda" Type="string" MaxLength="25" />
+          <Field Name="CijenaBezPdv" Type="decimal" Precision="19" Scale="4" />
+          <Field Name="Idproizvod" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
+          <Field Name="MinimalnaKolicinaNaSkladistu" Type="short" Precision="5" />
+          <Field Name="Naziv" Type="string" MaxLength="50" />
+          <Field Name="PotkategorijaId" Type="int" IsOptional="true" Precision="10" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="Racun" GroupName="Bla" ObjectID="49bd5c7e-76bc-4db5-a9ae-54880d0b8323">
+        <Fields>
+          <Field Name="BrojRacuna" Type="string" MaxLength="25" />
+          <Field Name="DatumIzdavanja" Type="datetime" />
+          <Field Name="Idracun" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
+          <Field Name="Komentar" Type="string" IsOptional="true" MaxLength="128" />
+          <Field Name="KomercijalistId" Type="int" IsOptional="true" Precision="10" />
+          <Field Name="KreditnaKarticaId" Type="int" IsOptional="true" Precision="10" />
+          <Field Name="KupacId" Type="int" Precision="10" />
+        </Fields>
+      </EntityDefinition>
+      <EntityDefinition Name="Stavka" GroupName="Bla" ObjectID="be99aaa8-2fb7-49af-8217-0699aa5545a7">
+        <Fields>
+          <Field Name="CijenaPoKomadu" Type="decimal" Precision="19" Scale="4" />
+          <Field Name="Idstavka" Type="int" IsReadOnly="true" Precision="10" IsPrimaryKey="true" />
+          <Field Name="Kolicina" Type="short" Precision="5" />
+          <Field Name="PopustUpostocima" Type="decimal" Precision="19" Scale="4" />
+          <Field Name="ProizvodId" Type="int" Precision="10" />
+          <Field Name="RacunId" Type="int" Precision="10" />
+          <Field Name="UkupnaCijena" Type="decimal" Precision="38" Scale="6" />
+        </Fields>
+      </EntityDefinition>
+    </EntityDefinitions>
+    <Relationships>
+      <NormalRelationship Name="Bla.Grad.Drzava-AdvWorks.Drzava.Grads" Start="Bla:Grad" End="AdvWorks:Drzava" StartNavigator="Drzava" EndNavigator="Grads" Type="4" EndIsOptional="true">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="DrzavaId" PkField="Iddrzava" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Bla.Kupac.Grad-Bla.Grad.Kupacs" Start="Bla:Kupac" End="Bla:Grad" StartNavigator="Grad" EndNavigator="Kupacs" Type="4" EndIsOptional="true">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="GradId" PkField="Idgrad" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Bla.Potkategorija.Kategorija-Bla.Kategorija.Potkategorijas" Start="Bla:Potkategorija" End="Bla:Kategorija" StartNavigator="Kategorija" EndNavigator="Potkategorijas" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="KategorijaId" PkField="Idkategorija" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Bla.Proizvod.Potkategorija-Bla.Potkategorija.Proizvods" Start="Bla:Proizvod" End="Bla:Potkategorija" StartNavigator="Potkategorija" EndNavigator="Proizvods" Type="4" EndIsOptional="true">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="PotkategorijaId" PkField="Idpotkategorija" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Bla.Racun.Komercijalist-Bla.Komercijalist.Racuns" Start="Bla:Racun" End="Bla:Komercijalist" StartNavigator="Komercijalist" EndNavigator="Racuns" Type="4" EndIsOptional="true">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="KomercijalistId" PkField="Idkomercijalist" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Bla.Racun.KreditnaKartica-Bla.KreditnaKartica.Racuns" Start="Bla:Racun" End="Bla:KreditnaKartica" StartNavigator="KreditnaKartica" EndNavigator="Racuns" Type="4" EndIsOptional="true">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="KreditnaKarticaId" PkField="IdkreditnaKartica" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Bla.Racun.Kupac-Bla.Kupac.Racuns" Start="Bla:Racun" End="Bla:Kupac" StartNavigator="Kupac" EndNavigator="Racuns" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="KupacId" PkField="Idkupac" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Bla.Stavka.Proizvod-Bla.Proizvod.Stavkas" Start="Bla:Stavka" End="Bla:Proizvod" StartNavigator="Proizvod" EndNavigator="Stavkas" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="ProizvodId" PkField="Idproizvod" />
+        </FieldRelationships>
+      </NormalRelationship>
+      <NormalRelationship Name="Bla.Stavka.Racun-Bla.Racun.Stavkas" Start="Bla:Stavka" End="Bla:Racun" StartNavigator="Racun" EndNavigator="Stavkas" Type="4">
+        <FieldRelationships>
+          <FieldFieldRelationship FkField="RacunId" PkField="Idracun" />
+        </FieldRelationships>
+      </NormalRelationship>
+    </Relationships>
+    <InheritanceHierarchies />
+  </EntityModel>
+  <TargetDatabases>
+    <TargetDatabase Type="2D18D138-1DD2-467E-86CC-4838250611AE" SyncSource="2">
+      <ConnectionElements>
+        <ConnectionElement Name="ServerName" Value="localhost\mojsql" />
+        <ConnectionElement Name="CatalogName" Value="master" />
+        <ConnectionElement Name="UseWindowsAuthentication" Value="true" />
+        <ConnectionElement Name="UserID" Value="" />
+        <ConnectionElement Name="Password" Value="" />
+      </ConnectionElements>
+      <SystemSequences>
+        <Sequence Name="SCOPE_IDENTITY()" />
+        <Sequence Name="@@IDENTITY" />
+      </SystemSequences>
+      <Catalogs>
+        <Catalog Name="AdventureWorksOBP" SyncSource="2">
+          <Schemas>
+            <Schema Name="dbo" SyncSource="2" LastSyncWithDatabase="2016-09-01T13:19:16.9731556Z">
+              <Tables>
+                <Table Name="Drzava">
+                  <PkConstraintName Name="PK_Drzava" />
+                  <Fields>
+                    <Field Name="IDDrzava" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="Naziv" Ordinal="2" IsOptional="true" DbType="12" Length="50" />
+                    <Field Name="CijenaDrzave" Ordinal="3" HasDefaultValue="true" DefaultValue="(0.0)" DbType="9" Precision="19" Scale="4" />
+                  </Fields>
+                </Table>
+                <Table Name="Grad">
+                  <PkConstraintName Name="PK_Grad" />
+                  <Fields>
+                    <Field Name="IDGrad" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="Naziv" Ordinal="2" IsOptional="true" DbType="12" Length="50" />
+                    <Field Name="DrzavaID" Ordinal="3" IsOptional="true" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="Kategorija">
+                  <PkConstraintName Name="PK_Kategorija" />
+                  <Fields>
+                    <Field Name="IDKategorija" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="Naziv" Ordinal="2" DbType="12" Length="50" />
+                  </Fields>
+                </Table>
+                <Table Name="Komercijalist">
+                  <PkConstraintName Name="PK_Komercijalist" />
+                  <Fields>
+                    <Field Name="IDKomercijalist" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="Ime" Ordinal="2" IsOptional="true" DbType="12" Length="50" />
+                    <Field Name="Prezime" Ordinal="3" IsOptional="true" DbType="12" Length="50" />
+                    <Field Name="StalniZaposlenik" Ordinal="4" IsOptional="true" DbType="2" />
+                  </Fields>
+                </Table>
+                <Table Name="KreditnaKartica">
+                  <PkConstraintName Name="PK_KreditnaKartica" />
+                  <Fields>
+                    <Field Name="IDKreditnaKartica" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="Tip" Ordinal="2" DbType="12" Length="50" />
+                    <Field Name="Broj" Ordinal="3" DbType="12" Length="25" />
+                    <Field Name="IstekMjesec" Ordinal="4" DbType="22" Precision="3" />
+                    <Field Name="IstekGodina" Ordinal="5" DbType="16" Precision="5" />
+                  </Fields>
+                </Table>
+                <Table Name="Kupac">
+                  <PkConstraintName Name="PK_Kupac" />
+                  <Fields>
+                    <Field Name="IDKupac" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="Ime" Ordinal="2" DbType="12" Length="50" />
+                    <Field Name="Prezime" Ordinal="3" DbType="12" Length="50" />
+                    <Field Name="Email" Ordinal="4" IsOptional="true" DbType="12" Length="50" />
+                    <Field Name="Telefon" Ordinal="5" IsOptional="true" DbType="12" Length="25" />
+                    <Field Name="GradID" Ordinal="6" IsOptional="true" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="Potkategorija">
+                  <PkConstraintName Name="PK_PotkategorijaProizvoda" />
+                  <Fields>
+                    <Field Name="IDPotkategorija" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="KategorijaID" Ordinal="2" DbType="8" Precision="10" />
+                    <Field Name="Naziv" Ordinal="3" DbType="12" Length="50" />
+                  </Fields>
+                </Table>
+                <Table Name="Proizvod">
+                  <PkConstraintName Name="PK_Proizvod" />
+                  <Fields>
+                    <Field Name="IDProizvod" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="Naziv" Ordinal="2" DbType="12" Length="50" />
+                    <Field Name="BrojProizvoda" Ordinal="3" DbType="12" Length="25" />
+                    <Field Name="Boja" Ordinal="4" IsOptional="true" DbType="12" Length="15" />
+                    <Field Name="MinimalnaKolicinaNaSkladistu" Ordinal="5" DbType="16" Precision="5" />
+                    <Field Name="CijenaBezPDV" Ordinal="6" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="PotkategorijaID" Ordinal="7" IsOptional="true" DbType="8" Precision="10" />
+                  </Fields>
+                </Table>
+                <Table Name="Racun">
+                  <PkConstraintName Name="PK_Racun" />
+                  <Fields>
+                    <Field Name="IDRacun" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="DatumIzdavanja" Ordinal="2" DbType="4" />
+                    <Field Name="BrojRacuna" Ordinal="3" DbType="12" Length="25" />
+                    <Field Name="KupacID" Ordinal="4" DbType="8" Precision="10" />
+                    <Field Name="KomercijalistID" Ordinal="5" IsOptional="true" DbType="8" Precision="10" />
+                    <Field Name="KreditnaKarticaID" Ordinal="6" IsOptional="true" DbType="8" Precision="10" />
+                    <Field Name="Komentar" Ordinal="7" IsOptional="true" DbType="12" Length="128" />
+                  </Fields>
+                </Table>
+                <Table Name="Stavka">
+                  <PkConstraintName Name="PK_Stavka" />
+                  <Fields>
+                    <Field Name="IDStavka" Ordinal="1" IsIdentity="true" IsPrimaryKey="true" DbType="8" Precision="10" />
+                    <Field Name="RacunID" Ordinal="2" DbType="8" Precision="10" />
+                    <Field Name="Kolicina" Ordinal="3" DbType="16" Precision="5" />
+                    <Field Name="ProizvodID" Ordinal="4" DbType="8" Precision="10" />
+                    <Field Name="CijenaPoKomadu" Ordinal="5" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="PopustUPostocima" Ordinal="6" DbType="9" Precision="19" Scale="4" />
+                    <Field Name="UkupnaCijena" Ordinal="7" DbType="13" Precision="38" Scale="6" />
+                  </Fields>
+                </Table>
+              </Tables>
+            </Schema>
+          </Schemas>
+          <ForeignKeyConstraints>
+            <ForeignKeyConstraint Name="dbo:Grad:FK_Grad_Drzava">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Drzava:IDDrzava" FkField="dbo:Grad:DrzavaID" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Kupac:FK_Kupac_Grad">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Grad:IDGrad" FkField="dbo:Kupac:GradID" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Potkategorija:FK_Potkategorija_Kategorija">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Kategorija:IDKategorija" FkField="dbo:Potkategorija:KategorijaID" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Proizvod:FK_Proizvod_Potkategorija">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Potkategorija:IDPotkategorija" FkField="dbo:Proizvod:PotkategorijaID" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Racun:FK_Racun_Komercijalist">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Komercijalist:IDKomercijalist" FkField="dbo:Racun:KomercijalistID" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Racun:FK_Racun_KreditnaKartica">
+              <FieldPairs>
+                <FieldPair PkField="dbo:KreditnaKartica:IDKreditnaKartica" FkField="dbo:Racun:KreditnaKarticaID" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Racun:FK_Racun_Kupac">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Kupac:IDKupac" FkField="dbo:Racun:KupacID" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Stavka:FK_Stavka_Proizvod">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Proizvod:IDProizvod" FkField="dbo:Stavka:ProizvodID" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+            <ForeignKeyConstraint Name="dbo:Stavka:FK_Stavka_Racun">
+              <FieldPairs>
+                <FieldPair PkField="dbo:Racun:IDRacun" FkField="dbo:Stavka:RacunID" />
+              </FieldPairs>
+            </ForeignKeyConstraint>
+          </ForeignKeyConstraints>
+        </Catalog>
+      </Catalogs>
+    </TargetDatabase>
+  </TargetDatabases>
+  <MappingStores>
+    <MappingStore Type="2D18D138-1DD2-467E-86CC-4838250611AE">
+      <EntityMappings>
+        <EntityMapping EntityName="AdvWorks:Drzava" TargetName="AdventureWorksOBP:dbo:Drzava">
+          <FieldMappings>
+            <FieldMapping FieldName="CijenaDrzave" TargetFieldName="CijenaDrzave" />
+            <FieldMapping FieldName="Iddrzava" TargetFieldName="IDDrzava" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="Naziv" TargetFieldName="Naziv" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Bla:Grad" TargetName="AdventureWorksOBP:dbo:Grad">
+          <FieldMappings>
+            <FieldMapping FieldName="DrzavaId" TargetFieldName="DrzavaID" />
+            <FieldMapping FieldName="Idgrad" TargetFieldName="IDGrad" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="Naziv" TargetFieldName="Naziv" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Bla:Kategorija" TargetName="AdventureWorksOBP:dbo:Kategorija">
+          <FieldMappings>
+            <FieldMapping FieldName="Idkategorija" TargetFieldName="IDKategorija" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="Naziv" TargetFieldName="Naziv" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Bla:Komercijalist" TargetName="AdventureWorksOBP:dbo:Komercijalist">
+          <FieldMappings>
+            <FieldMapping FieldName="Idkomercijalist" TargetFieldName="IDKomercijalist" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="Ime" TargetFieldName="Ime" />
+            <FieldMapping FieldName="Prezime" TargetFieldName="Prezime" />
+            <FieldMapping FieldName="StalniZaposlenik" TargetFieldName="StalniZaposlenik" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Bla:KreditnaKartica" TargetName="AdventureWorksOBP:dbo:KreditnaKartica">
+          <FieldMappings>
+            <FieldMapping FieldName="Broj" TargetFieldName="Broj" />
+            <FieldMapping FieldName="IdkreditnaKartica" TargetFieldName="IDKreditnaKartica" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="IstekGodina" TargetFieldName="IstekGodina" />
+            <FieldMapping FieldName="IstekMjesec" TargetFieldName="IstekMjesec" />
+            <FieldMapping FieldName="Tip" TargetFieldName="Tip" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Bla:Kupac" TargetName="AdventureWorksOBP:dbo:Kupac">
+          <FieldMappings>
+            <FieldMapping FieldName="Email" TargetFieldName="Email" />
+            <FieldMapping FieldName="GradId" TargetFieldName="GradID" />
+            <FieldMapping FieldName="Idkupac" TargetFieldName="IDKupac" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="Ime" TargetFieldName="Ime" />
+            <FieldMapping FieldName="Prezime" TargetFieldName="Prezime" />
+            <FieldMapping FieldName="Telefon" TargetFieldName="Telefon" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Bla:Potkategorija" TargetName="AdventureWorksOBP:dbo:Potkategorija">
+          <FieldMappings>
+            <FieldMapping FieldName="Idpotkategorija" TargetFieldName="IDPotkategorija" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="KategorijaId" TargetFieldName="KategorijaID" />
+            <FieldMapping FieldName="Naziv" TargetFieldName="Naziv" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Bla:Proizvod" TargetName="AdventureWorksOBP:dbo:Proizvod">
+          <FieldMappings>
+            <FieldMapping FieldName="Boja" TargetFieldName="Boja" />
+            <FieldMapping FieldName="BrojProizvoda" TargetFieldName="BrojProizvoda" />
+            <FieldMapping FieldName="CijenaBezPdv" TargetFieldName="CijenaBezPDV" />
+            <FieldMapping FieldName="Idproizvod" TargetFieldName="IDProizvod" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="MinimalnaKolicinaNaSkladistu" TargetFieldName="MinimalnaKolicinaNaSkladistu" />
+            <FieldMapping FieldName="Naziv" TargetFieldName="Naziv" />
+            <FieldMapping FieldName="PotkategorijaId" TargetFieldName="PotkategorijaID" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Bla:Racun" TargetName="AdventureWorksOBP:dbo:Racun">
+          <FieldMappings>
+            <FieldMapping FieldName="BrojRacuna" TargetFieldName="BrojRacuna" />
+            <FieldMapping FieldName="DatumIzdavanja" TargetFieldName="DatumIzdavanja" />
+            <FieldMapping FieldName="Idracun" TargetFieldName="IDRacun" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="Komentar" TargetFieldName="Komentar" />
+            <FieldMapping FieldName="KomercijalistId" TargetFieldName="KomercijalistID" />
+            <FieldMapping FieldName="KreditnaKarticaId" TargetFieldName="KreditnaKarticaID" />
+            <FieldMapping FieldName="KupacId" TargetFieldName="KupacID" />
+          </FieldMappings>
+        </EntityMapping>
+        <EntityMapping EntityName="Bla:Stavka" TargetName="AdventureWorksOBP:dbo:Stavka">
+          <FieldMappings>
+            <FieldMapping FieldName="CijenaPoKomadu" TargetFieldName="CijenaPoKomadu" />
+            <FieldMapping FieldName="Idstavka" TargetFieldName="IDStavka" SequenceToUse="SCOPE_IDENTITY()" />
+            <FieldMapping FieldName="Kolicina" TargetFieldName="Kolicina" />
+            <FieldMapping FieldName="PopustUpostocima" TargetFieldName="PopustUPostocima" />
+            <FieldMapping FieldName="ProizvodId" TargetFieldName="ProizvodID" />
+            <FieldMapping FieldName="RacunId" TargetFieldName="RacunID" />
+            <FieldMapping FieldName="UkupnaCijena" TargetFieldName="UkupnaCijena" />
+          </FieldMappings>
+        </EntityMapping>
+      </EntityMappings>
+      <TypedViewMappings />
+      <SPCallMappings />
+      <TvfCallMappings />
+      <TypeConversionDefinitions />
+    </MappingStore>
+  </MappingStores>
+  <ModelViews />
+</Project>
