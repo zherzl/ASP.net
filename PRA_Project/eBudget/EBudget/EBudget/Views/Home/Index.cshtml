@@ -1,0 +1,46 @@
+﻿@model EBudget.Models.Opis
+
+@{
+    ViewBag.Title = "Početna Stranica";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+        </div>
+    </section>
+}
+@if (User.Identity.IsAuthenticated)
+{
+    <h3>Nudimo: </h3>
+    <ol class="round">
+        <li class="one">
+            <h5>Prihodi</h5>
+            eBudget Vam omogućuje unos prihoda u svakom trenutku.
+        
+        </li>
+
+        <li class="two">
+            <h5>Troškovi</h5>
+            Nužni za praćenje Vašeg financijskog stanja
+        
+        </li>
+
+        <li class="three">
+            <h5>Saldo</h5>
+            Analiza prihoda i troškova po danu, tjednu, mjesecu. U svakom trenutku udaljen samo jedan klik.
+        
+        
+        </li>
+    </ol>
+
+    <div>
+
+        @Html.ActionLink("Glavna Konzola", "Index", "Main")
+
+
+    </div>
+}

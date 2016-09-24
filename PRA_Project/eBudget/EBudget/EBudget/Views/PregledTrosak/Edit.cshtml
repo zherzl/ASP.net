@@ -1,0 +1,40 @@
+﻿@model EBudget.Models.CreateTrosakView
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm("Edit", "PregledTrosak", FormMethod.Post))
+{
+    <table>
+      @*  <tr>
+            <td>Kategorija: </td>
+            <td>
+                 @Html.DropDownListFor(model => model.Trosak.Kategorija.Naziv, Model.Kategorije,"---odaberite---")
+            </td>
+
+
+
+        </tr>*@
+        <tr>
+            <td>Iznos: </td>
+            <td>
+                @Html.TextBoxFor(model => model.Trosak.Iznos)
+            </td>
+        </tr>
+        <tr>
+            <td>Datum: </td>
+            <td>@Html.EditorFor(model => model.Trosak.DatumVrijeme, new { @type = "date" }) </td>
+
+        </tr>
+        <tr>
+            <td>
+                @Html.HiddenFor(model => model.Trosak.IDPrihodTrosak, new {@value=Model.Trosak.IDPrihodTrosak})
+            </td>
+        </tr>
+    </table>
+    <button type="submit" class="button" >Promijeni</button>
+    @*<input type="submit" name="edit" id="edit" value="Promijeni" />*@
+    @Html.ActionLink("Povratak", "Index", new {@class="button"});
+}

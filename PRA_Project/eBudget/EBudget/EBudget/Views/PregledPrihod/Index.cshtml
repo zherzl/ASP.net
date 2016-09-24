@@ -1,0 +1,38 @@
+﻿@model EBudget.Models.DetaljiTrosakPrihodModelView
+@{
+    ViewBag.Title = "Pregled prihoda";
+}
+
+<h2>Index</h2>
+
+<fieldset>
+    <legend>Pregled prihoda</legend>
+    <table class="table table-striped">
+        <tr>
+            <td>Iznos</td>
+            <td>Datum</td>
+            <td></td>
+        </tr>
+        @foreach (var item in Model.prihodKolekcija)
+        {
+            <tr>
+                <td>
+                    @item.Iznos
+                </td>
+                <td>
+                    @item.DatumVrijeme.ToString()
+                </td>
+                <td>
+                    @Html.ActionLink("Uredi", "Edit", new { idPrihod = item.IDPrihodTrosak})
+                </td>
+            </tr>
+        }
+      
+    </table>
+</fieldset>
+
+<style>
+    a:link, a:visited, a:hover, a:active {
+        color:white;
+    }
+</style>

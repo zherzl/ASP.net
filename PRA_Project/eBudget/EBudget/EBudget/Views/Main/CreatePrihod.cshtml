@@ -1,0 +1,86 @@
+﻿@model EBudget.Models.CreatePrihodView
+
+@{
+
+    ViewBag.Title = "Unos prihoda";
+}
+
+<h2>Unos</h2>
+@using (Html.BeginForm("CreatePrihod", "Main", FormMethod.Post))
+{
+    <table>
+        <tbody>
+            <tr>
+                <td>
+                    Odaberi kategoriju
+                </td>
+                <td>
+                    @if (Model != null)
+                    {
+                        @Html.DropDownListFor(model => model.Prihod.Kategorija.IDKategorija, Model.Kategorije,"---odaberite---", new { @class = "klasa" })
+                    }
+
+                </td>
+            </tr>
+            <tr>
+                <td>Prihod
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.Prihod.Iznos)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.Prihod.Iznos)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Prihod.DatumVrijeme)
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.Prihod.DatumVrijeme, new { @id = "datepicker", @type = "date"})
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.Prihod.DatumVrijeme)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="submit" name="submit" value="notFinished">Unesi prihode i nastavi unos</button>
+    <button type="submit"  name="submit" value="finished">Unesi prihode i završi unos</button>
+}
+
+@section scripts
+{
+    <style>
+        .klasa {
+            font-family:'Segoe UI';
+            font-size:1.5em;
+        }
+    </style>
+
+  @*  <script type="text/javascript">
+        $(document).ready(function () {
+            $('#datepicker').datepicker({
+                dateFormat: "yy/mm/dd",
+                showStatus: true,
+                showWeeks: true,
+                currentText: 'Now',
+                autoSize: true,
+                gotoCurrent: true,
+                showAnim: 'blind',
+                highlightWeek: true
+            });
+        });
+    </script>*@
+
+   @* <script type="text/javascript">
+        $(function () {
+            $("#datepicker").datepicker();
+            $("#datepicker").datepicker("option", "dateFormat", "dd.mm.yy");
+
+        });
+                
+    </script>*@
+
+    
+}
