@@ -33,6 +33,15 @@
         alert(vrijednost);
     }
     $(function () {
+
+        jQuery('<div/>', {
+            id: 'foo',
+            href: 'http://google.com',
+            title: 'Become a Googler',
+            rel: 'external',
+            text: 'Go to Google!'
+        }).appendTo('.jumbotron');
+
         $input = $('input.datepicker');
         $input.datepicker({
             autoclose: false,
