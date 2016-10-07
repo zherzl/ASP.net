@@ -1,0 +1,7 @@
+jQuery('<div/>', {
+            id: 'foo',
+            href: 'http://google.com',
+            title: 'Become a Googler',
+            rel: 'external',
+            text: 'Go to Google!'
+        }).appendTo('.jumbotron');
