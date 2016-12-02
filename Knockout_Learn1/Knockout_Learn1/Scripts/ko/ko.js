@@ -31,8 +31,9 @@ function personModel() {
     this.removeProduct = function (proizvod) {
         //self.shoppingCart.remove(proizvod);
         // Dobar način u tom slučaju koji ne uklanja item iz liste zapravo:
-        //self.shoppingCart.destroy(proizvod);
-        alert(self.shoppingCart().length + " " + proizvod.name());
+        self.shoppingCart.destroy(proizvod);
+        //console.log(self.shoppingCart().length);
+        //alert(self.shoppingCart().length + " " + proizvod.name());
         
     };
 
@@ -44,6 +45,16 @@ function personModel() {
     this.fullName = ko.computed(function () {
         return this.firstName() + ' ' + this.lastName();
     }, this);
+
+    this.provjeriStanjeListe = function () {
+        for (var i = 0; i < self.shoppingCart().length; i++) {
+
+            var obrisaniObj = self.shoppingCart()[i];
+            if (obrisaniObj._destroy == true) {
+                console.log("objekt " + obrisaniObj.name() + " je obrisan");
+            }
+        }
+    }
 };
 
 function spremiPodatke(data) {
@@ -53,3 +64,18 @@ function spremiPodatke(data) {
 var vm = new personModel();
 ko.applyBindings(vm);
 vm.firstName("Mirko");
+
+
+// Array funkcije u knockoutu (isto kao i u javascriptu):
+// push()
+// pop() 
+// unshift()
+// shift()
+// slice()
+// remove()
+// removeAll()
+// destroy()
+// destroyAll()
+// sort()
+// reversed()
+// indexOf()
