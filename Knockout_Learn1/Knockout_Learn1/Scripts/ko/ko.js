@@ -69,6 +69,8 @@ function personModel() {
 
     var featured = new Product("ACME", 4.99);
     this.featured = ko.observable(featured);
+
+    this.link = ko.observable("http://www.24sata.hr");
 };
 
 function spremiPodatke(data) {
@@ -93,3 +95,16 @@ vm.firstName("Mirko");
 // sort()
 // reversed()
 // indexOf()
+
+//// Binding za interakciju
+// click: <method>—Call a ViewModel method when the element is clicked.
+// value: <property>—Link a form element’s value to a ViewModel property. 
+// event: <object>—Call a method when a user-initiated event occurs.
+// submit: <method>—Call a method when a form is submitted.
+// enable: <property>—Enable a form element based on a certain condition.
+// disable: <property>—Disable a form element based on a certain condition.
+// checked: <property>—Link a radio button or check box to a ViewModel 
+//property.
+// options: <array>—Define a <select> element with a ViewModel array. 
+// selectedOptions: <array>—Define the active elements in a <select> field.
+// hasfocus: <property>—Define whether or not the element is focused. 
