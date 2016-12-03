@@ -1,29 +1,51 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<style>
+    .supersaver {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+</style>
 
 
-
-<div class="jumbotron fi-social-apple">
+<div class="jumbotron">
     <h1><input type="text" data-bind='value: firstName' /></h1>
     <h1><input type="text" data-bind='value: lastName' /></h1>
     <h1><span data-bind="text: fullName"></span>   </h1>
     <button data-bind="click: obaviNesto">Klikn me</button>
-    <button data-bind="click: spremiPodatke" >Save data</button>
+    <button data-bind="click: spremiPodatke">Save data</button>
     <button data-bind="click: dodajProizvod">Dodaj proizvod</button>
     <button data-bind="click: provjeriStanjeListe">Provjeri listu</button>
     <table class="table">
         <thead>
             <tr>
+                <td>Index</td>
                 <td>Proizvod</td>
                 <td>Cijena</td>
+                <td>Tagovi</td>
             </tr>
         </thead>
         <tbody data-bind="foreach: shoppingCart">
             <tr>
+                <td data-bind="text: $index"></td>
                 <td data-bind="text: name"></td>
                 <td data-bind="text: price"></td>
+                <td>
+                    <ol data-bind="foreach: tags">
+                        <li data-bind="text: $data"></li>
+                        @*Primjer dohvata parent modela*@
+                        @*<li><b data-bind="text: $parent.name"></b></li>*@
+                    </ol>
+                </td>
+                <td data-bind="if: discount() > 0" style="color: red">
+                    You saved <span data-bind="text: formattedDiscount"></span> !!!
+                </td>
                 <td> <button data-bind='click: $root.removeProduct'>Ukloni proizvod</button> </td>
+
+                <td data-bind='if: discount() > 0' style='color: red'>
+                    You saved <span data-bind="text: formattedDiscount, css: {supersaver: discount()>.15}"></span>!!!
+                </td>
             </tr>
         </tbody>
     </table>
@@ -31,8 +53,11 @@
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        
+        <h2>Featured product</h2>
+        <p data-bind="with: featured">
+            Do you need <strong data-bind="text: name"></strong> ? <br />
+            Get one only for <strong data-bind="text: price"></strong>
+        </p>
         <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
     </div>
     <div class="col-md-4">

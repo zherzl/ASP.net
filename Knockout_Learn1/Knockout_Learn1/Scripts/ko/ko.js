@@ -1,6 +1,16 @@
-﻿function Product(name, price) {
+﻿function Product(name, price, tags, discount) {
     this.name = ko.observable(name);
     this.price = ko.observable(price);
+    tags = typeof (tags) !== 'undefined' ? tags : [];
+    this.tags = ko.observableArray(tags);
+
+    discount = typeof (discount) !== 'undefined' ? discount : 0;
+    this.discount = ko.observable(discount);
+    this.formattedDiscount = ko.computed(function () {
+        return (this.discount() * 100) + '%';
+    }, this);
+
+
 }
 
 function personModel() {
@@ -18,9 +28,9 @@ function personModel() {
 
     this.shoppingCart = ko.observableArray(
         [
-            new Product("Pivo", 10.99),
-            new Product("Pecivo", 12.99),
-            new Product("Patka", 8.99)
+            new Product("Pivo", 10.99, null, 0.2),
+            new Product("Pecivo", 12.99, ['Dubravica', 'Mlinar'], 0.0),
+            new Product("Patka", 8.99, ['Pekinška', 'Pečena'])
         ]);
 
     // remove metoda je korisna za real-time objekte...kod slanja na na server može biti problem. 
@@ -46,6 +56,7 @@ function personModel() {
         return this.firstName() + ' ' + this.lastName();
     }, this);
 
+    // Eto, gledamo što je bilo obrisano
     this.provjeriStanjeListe = function () {
         for (var i = 0; i < self.shoppingCart().length; i++) {
 
@@ -55,6 +66,9 @@ function personModel() {
             }
         }
     }
+
+    var featured = new Product("ACME", 4.99);
+    this.featured = ko.observable(featured);
 };
 
 function spremiPodatke(data) {
