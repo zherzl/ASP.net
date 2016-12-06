@@ -1,4 +1,4 @@
-﻿function Product(name, price) {
+﻿function Product(name, price, tags, discount) {
     this.name = ko.observable(name);
     this.price = ko.observable(price);
     this.priceFormatted = ko.computed(function () {
@@ -6,6 +6,16 @@
         return formatValue(this.price().toString());
     }, this);
         
+    tags = typeof (tags) !== 'undefined' ? tags : [];
+    this.tags = ko.observableArray(tags);
+
+    discount = typeof (discount) !== 'undefined' ? discount : 0;
+    this.discount = ko.observable(discount);
+    this.formattedDiscount = ko.computed(function () {
+        return (this.discount() * 100) + '%';
+    }, this);
+
+
 }
 
 
@@ -26,9 +36,15 @@ function personModel() {
 
     this.shoppingCart = ko.observableArray(
         [
+<<<<<<< HEAD
             new Product("Pivo", 100000.999),
             new Product("Pecivo", 12.99),
             new Product("Patka", 8.99)
+=======
+            new Product("Pivo", 10.99, null, 0.2),
+            new Product("Pecivo", 12.99, ['Dubravica', 'Mlinar'], 0.0),
+            new Product("Patka", 8.99, ['Pekinška', 'Pečena'])
+>>>>>>> origin/master
         ]);
 
     // remove metoda je korisna za real-time objekte...kod slanja na server može biti problem. 
@@ -40,9 +56,15 @@ function personModel() {
         //self.shoppingCart.remove(proizvod);
         // Dobar način u tom slučaju koji ne uklanja item iz liste zapravo:
         self.shoppingCart.destroy(proizvod);
+<<<<<<< HEAD
         //alert(proizvod._destroy);
         //alert(self.shoppingCart().length + " " + proizvod.name());
         ispisiSve(self.shoppingCart());
+=======
+        //console.log(self.shoppingCart().length);
+        //alert(self.shoppingCart().length + " " + proizvod.name());
+        
+>>>>>>> origin/master
     };
 
 
@@ -53,6 +75,22 @@ function personModel() {
     this.fullName = ko.computed(function () {
         return this.firstName() + ' ' + this.lastName();
     }, this);
+
+    // Eto, gledamo što je bilo obrisano
+    this.provjeriStanjeListe = function () {
+        for (var i = 0; i < self.shoppingCart().length; i++) {
+
+            var obrisaniObj = self.shoppingCart()[i];
+            if (obrisaniObj._destroy == true) {
+                console.log("objekt " + obrisaniObj.name() + " je obrisan");
+            }
+        }
+    }
+
+    var featured = new Product("ACME", 4.99);
+    this.featured = ko.observable(featured);
+
+    this.link = ko.observable("http://www.24sata.hr");
 };
 
 
@@ -86,3 +124,31 @@ function spremiPodatke(data) {
 var vm = new personModel();
 ko.applyBindings(vm);
 vm.firstName("Mirko");
+
+
+// Array funkcije u knockoutu (isto kao i u javascriptu):
+// push()
+// pop() 
+// unshift()
+// shift()
+// slice()
+// remove()
+// removeAll()
+// destroy()
+// destroyAll()
+// sort()
+// reversed()
+// indexOf()
+
+//// Binding za interakciju
+// click: <method>—Call a ViewModel method when the element is clicked.
+// value: <property>—Link a form element’s value to a ViewModel property. 
+// event: <object>—Call a method when a user-initiated event occurs.
+// submit: <method>—Call a method when a form is submitted.
+// enable: <property>—Enable a form element based on a certain condition.
+// disable: <property>—Disable a form element based on a certain condition.
+// checked: <property>—Link a radio button or check box to a ViewModel 
+//property.
+// options: <array>—Define a <select> element with a ViewModel array. 
+// selectedOptions: <array>—Define the active elements in a <select> field.
+// hasfocus: <property>—Define whether or not the element is focused. 
