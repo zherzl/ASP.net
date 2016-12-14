@@ -36,15 +36,9 @@ function personModel() {
 
     this.shoppingCart = ko.observableArray(
         [
-<<<<<<< HEAD
-            new Product("Pivo", 100000.999),
-            new Product("Pecivo", 12.99),
-            new Product("Patka", 8.99)
-=======
             new Product("Pivo", 10.99, null, 0.2),
             new Product("Pecivo", 12.99, ['Dubravica', 'Mlinar'], 0.0),
             new Product("Patka", 8.99, ['Pekinška', 'Pečena'])
->>>>>>> origin/master
         ]);
 
     // remove metoda je korisna za real-time objekte...kod slanja na server može biti problem. 
@@ -56,15 +50,10 @@ function personModel() {
         //self.shoppingCart.remove(proizvod);
         // Dobar način u tom slučaju koji ne uklanja item iz liste zapravo:
         self.shoppingCart.destroy(proizvod);
-<<<<<<< HEAD
         //alert(proizvod._destroy);
         //alert(self.shoppingCart().length + " " + proizvod.name());
         ispisiSve(self.shoppingCart());
-=======
-        //console.log(self.shoppingCart().length);
-        //alert(self.shoppingCart().length + " " + proizvod.name());
-        
->>>>>>> origin/master
+
     };
 
 
