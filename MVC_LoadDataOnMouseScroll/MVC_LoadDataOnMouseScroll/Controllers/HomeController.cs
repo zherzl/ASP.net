@@ -44,5 +44,10 @@ namespace MVC_LoadDataOnMouseScroll.Controllers
 
             return View();
         }
+
+        public ActionResult AddKupac()
+        {
+            return View();
+        }
     }
 }

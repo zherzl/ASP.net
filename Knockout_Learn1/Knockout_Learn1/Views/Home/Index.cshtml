@@ -9,6 +9,40 @@
 </style>
 
 
+
+
+<div class="jumbotron">
+    <h1><input type="text" data-bind='value: firstName' /></h1>
+    <h1><input type="text" data-bind='value: lastName' /></h1>
+    <h1><span data-bind="text: fullName"></span>   </h1>
+    <h4><span data-bind="text: visina"></span></h4>
+    <h4><input type="text" data-bind='value: visina' value=" " /></h4>
+    <button data-bind="click: obaviNesto">Klikn me</button>
+    <button data-bind="click: spremiPodatke" >Save data</button>
+    <button data-bind="click: dodajProizvod">Dodaj proizvod</button>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Proizvod</td>
+                <td>Cijena</td>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: shoppingCart">
+            <tr>
+                <td data-bind="text: name"></td>
+                <td data-bind="text: priceFormatted"></td>
+                <td>
+                    <ul data-bind='foreach: tags'>
+                        <li data-bind='text: $data'></li>
+                    </ul>
+                </td>
+                <td> <button data-bind='click: $root.removeProduct'>Ukloni proizvod</button> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 <div class="row">
     <div class="col-md-12">
         Ime:
@@ -23,6 +57,7 @@
         Attribute binding:
         <p><a data-bind="attr: { href: link()}">Idi na 24 sata</a></p>
     </div>
+
 </div>
 
 <div class="row">
@@ -80,6 +115,11 @@
     </div>
 </div>
 
+@*External data binding*@
+<div>
+
+</div>
+<script src="~/Scripts/ko/formatters.js"></script>
 <script src="~/Scripts/ko/ko.js"></script>
 <script src="~/Scripts/HeavyTable/HeavyTable.js"></script>
 <link href="~/Scripts/HeavyTable/HeavyTable.css" rel="stylesheet" />
@@ -91,3 +131,4 @@
         });
     });
 </script>
+
