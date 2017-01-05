@@ -17,7 +17,7 @@ namespace Knockout_Learn1.Controllers
         [HttpGet]
         public ActionResult InteractiveBindings()
         {
-            AdvWorks db = new AdvWorks();
+            AdventureWorksObpModel db = new AdventureWorksObpModel();
             Grad g = new Grad();
 
             IEnumerable<SelectListItem> DrzavaID = (db.Drzavas.Select(x => new SelectListItem { Value = x.IDDrzava.ToString(), Text = x.Naziv }).ToList());
@@ -33,6 +33,35 @@ namespace Knockout_Learn1.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
+        public ActionResult Podaci()
+        {
+            try
+            {
+                AdventureWorksObpModel db = new AdventureWorksObpModel();
+                List<Grad> gradovi = new List<Grad>();
+
+                List<Grad> tmp = db.Grads.ToList();
+                foreach (Grad g in tmp)
+                {
+                    Grad novi = new Grad();
+                    novi.Naziv = g.Naziv;
+                    novi.DrzavaID = g.DrzavaID;
+                    novi.IDGrad = g.IDGrad;
+
+                    gradovi.Add(novi);
+                }
+
+                return Json(gradovi, JsonRequestBehavior.AllowGet);
+
+            }
+            catch (Exception ex)
+            {
+                string g = ex.Message;
+            }
 
             return View();
         }

@@ -5,3 +5,27 @@
 <h3>@ViewBag.Message</h3>
 
 <p>Use this area to provide additional information.</p>
+<p><button data-bind='click: loadData'>Load Data</button></p> 
+
+<div class="row">
+    <div class="col-md-8">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Naziv</th>
+                    <th>Država</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: gradovi">
+                <tr>
+                    <td data-bind="text: Prikaz"></td>
+                    <td data-bind="text: NazivDrzave"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script src="~/Scripts/ko/formatters.js"></script>
+<script src="~/Scripts/ko/koAbout.js"></script>

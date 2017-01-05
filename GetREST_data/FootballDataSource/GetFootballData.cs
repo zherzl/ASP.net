@@ -87,7 +87,9 @@ namespace FootballDataSource
             //request.AddUrlSegment("id", "123"); // replaces matching token in request.Resource
 
             // easily add HTTP Headers
+
             request.AddHeader("X-Auth-Token", apiToken);
+            request.AddHeader("X-Response-Control", "minified");
 
             // add files to upload (works with compatible verbs)
             //request.AddFile(path);

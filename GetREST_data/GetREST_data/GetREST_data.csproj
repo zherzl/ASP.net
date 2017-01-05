@@ -183,10 +183,10 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="ApplicationInsights.config">
+    <!--<Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Properties\DataSources\ModelLibrary.Entities.Team.datasource" />
+    <Content Include="Properties\DataSources\ModelLibrary.Entities.Team.datasource" />-->
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -220,6 +220,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+<<<<<<< HEAD
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <None Include="Service References\FootballService\FootballService.wsdl" />
     <None Include="Service References\FootballService\FootballService.xsd">
@@ -231,6 +232,8 @@
     <None Include="Service References\FootballService\FootballService2.xsd">
       <SubType>Designer</SubType>
     </None>
+=======
+>>>>>>> origin/master
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
