@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FootballService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:31909/FootballService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:31909/FootballService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:31909/FootballService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ModelLibrary.Entities" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFootballService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IFootballService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFootballService_GetAllTeamsData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTeamsData" />
+  </wsdl:message>
+  <wsdl:message name="IFootballService_GetAllTeamsData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTeamsDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFootballService_AddTeam_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTeam" />
+  </wsdl:message>
+  <wsdl:message name="IFootballService_AddTeam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFootballService_AddTeamRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTeamRange" />
+  </wsdl:message>
+  <wsdl:message name="IFootballService_AddTeamRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTeamRangeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFootballService">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFootballService/GetData" message="tns:IFootballService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFootballService/GetDataResponse" message="tns:IFootballService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTeamsData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFootballService/GetAllTeamsData" message="tns:IFootballService_GetAllTeamsData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFootballService/GetAllTeamsDataResponse" message="tns:IFootballService_GetAllTeamsData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTeam">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFootballService/AddTeam" message="tns:IFootballService_AddTeam_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFootballService/AddTeamResponse" message="tns:IFootballService_AddTeam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTeamRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFootballService/AddTeamRange" message="tns:IFootballService_AddTeamRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFootballService/AddTeamRangeResponse" message="tns:IFootballService_AddTeamRange_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFootballService" type="tns:IFootballService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IFootballService/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTeamsData">
+      <soap:operation soapAction="http://tempuri.org/IFootballService/GetAllTeamsData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTeam">
+      <soap:operation soapAction="http://tempuri.org/IFootballService/AddTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTeamRange">
+      <soap:operation soapAction="http://tempuri.org/IFootballService/AddTeamRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FootballService">
+    <wsdl:port name="BasicHttpBinding_IFootballService" binding="tns:BasicHttpBinding_IFootballService">
+      <soap:address location="http://localhost:31909/FootballService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

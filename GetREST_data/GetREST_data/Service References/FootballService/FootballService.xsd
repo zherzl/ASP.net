@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ModelLibrary.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ModelLibrary.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfTeam">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Team" nillable="true" type="tns:Team" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTeam" nillable="true" type="tns:ArrayOfTeam" />
+  <xs:complexType name="Team">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CrestUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SourceId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SquadMarketValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Teams" nillable="true" type="tns:Teams" />
+      <xs:element minOccurs="0" name="TeamsId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Team" nillable="true" type="tns:Team" />
+  <xs:complexType name="Teams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="_links" nillable="true" type="tns:ArrayOfLinkTeams" />
+      <xs:element minOccurs="0" name="count" type="xs:int" />
+      <xs:element minOccurs="0" name="teams" nillable="true" type="tns:ArrayOfTeam" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Teams" nillable="true" type="tns:Teams" />
+  <xs:complexType name="ArrayOfLinkTeams">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LinkTeams" nillable="true" type="tns:LinkTeams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLinkTeams" nillable="true" type="tns:ArrayOfLinkTeams" />
+  <xs:complexType name="LinkTeams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Competition" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Self" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Teams" nillable="true" type="tns:Teams" />
+      <xs:element minOccurs="0" name="TeamsId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LinkTeams" nillable="true" type="tns:LinkTeams" />
+</xs:schema>

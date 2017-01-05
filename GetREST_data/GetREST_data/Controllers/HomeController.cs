@@ -11,8 +11,9 @@ using System.Net.Http.Headers;
 using System.IO;
 using System.Text;
 using System.Web.Script.Serialization;
-using GetREST_data.Models;
-using FootballDataSource.Models;
+using ModelLibrary.Entities;
+using FootballDataSource;
+using GetREST_data.FootballService;
 
 namespace GetREST_data.Controllers
 {
@@ -24,36 +25,15 @@ namespace GetREST_data.Controllers
             //string url = "http://api.football-data.org/v1/competitions/398/teams";
             //string x = GET(url);
             //var serializer = new JavaScriptSerializer();
-            TeamModel tm = FootballDataSource.GetFootballData.GetTeamModel(); 
-            return View();
+            new GetFootballDataSource().GetTeamModel();
+            FootballServiceClient client = new FootballServiceClient();
+            List<Team> teams = new FootballDataSource.GetFootballDataSource().GetTeamsForCompetition(LeagueCodes.ChampionsLeague);
+            client.AddTeamRange(teams);
+
+            return View(teams);
         }
 
 
-        // Returns JSON string
-        string GET(string url)
-        {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-            try
-            {
-                WebResponse response = request.GetResponse();
-                using (Stream responseStream = response.GetResponseStream())
-                {
-                    StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
-                    return reader.ReadToEnd();
-                }
-            }
-            catch (WebException ex)
-            {
-                WebResponse errorResponse = ex.Response;
-                using (Stream responseStream = errorResponse.GetResponseStream())
-                {
-                    StreamReader reader = new StreamReader(responseStream, Encoding.GetEncoding("utf-8"));
-                    String errorText = reader.ReadToEnd();
-                    // log errorText
-                }
-                throw;
-            }
-        }
 
    
 

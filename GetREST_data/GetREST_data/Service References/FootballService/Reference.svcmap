@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ef16494b-2f71-48bd-9086-b06ceac3db9b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:31909/FootballService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FootballService.disco" MetadataType="Disco" ID="e9f09462-4f6c-4780-a6bd-d0758db5444b" SourceId="1" SourceUrl="http://localhost:31909/FootballService.svc?disco" />
+    <MetadataFile FileName="FootballService.xsd" MetadataType="Schema" ID="500b6694-e665-4ab1-830f-598b88651eb4" SourceId="1" SourceUrl="http://localhost:31909/FootballService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FootballService.wsdl" MetadataType="Wsdl" ID="9f109e39-8af1-40cd-88cc-c44c2514fb51" SourceId="1" SourceUrl="http://localhost:31909/FootballService.svc?wsdl" />
+    <MetadataFile FileName="FootballService1.xsd" MetadataType="Schema" ID="53d77c34-1ea5-46f2-8e72-64d9d46375cc" SourceId="1" SourceUrl="http://localhost:31909/FootballService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FootballService2.xsd" MetadataType="Schema" ID="3fa6e231-35e4-477e-ae69-414cba13ae33" SourceId="1" SourceUrl="http://localhost:31909/FootballService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
