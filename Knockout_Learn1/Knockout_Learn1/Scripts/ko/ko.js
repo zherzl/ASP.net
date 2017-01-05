@@ -115,6 +115,16 @@ ko.applyBindings(vm);
 vm.firstName("Mirko");
 
 
+
+//public int IDGrad { get; set; }
+//public string Naziv { get; set; }
+//public int? DrzavaID { get; set; }
+//public virtual Drzava Drzava { get; set; }
+//public virtual ICollection<Kupac> Kupacs { get; set; }
+
+
+
+
 // Array funkcije u knockoutu (isto kao i u javascriptu):
 // push()
 // pop() 
