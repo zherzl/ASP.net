@@ -185,13 +185,13 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityDbContext.cs" />
     <Compile Include="Models\ObrtModels\EvidencijaContext.cs" />
-    <Compile Include="Models\ObrtModels\ObrtFooter.cs" />
-    <Compile Include="Models\ObrtModels\ObrtKlijent.cs" />
+    <Compile Include="Models\ObrtModels\FooterTemplate.cs" />
+    <Compile Include="Models\ObrtModels\Klijent.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ObrtModels\ModelBase.cs" />
-    <Compile Include="Models\ObrtModels\ObrtDetalj.cs" />
-    <Compile Include="Models\ObrtModels\ObrtStavka.cs" />
-    <Compile Include="Models\ObrtModels\ObrtRacun.cs" />
+    <Compile Include="Models\ObrtModels\Obrt.cs" />
+    <Compile Include="Models\ObrtModels\Stavka.cs" />
+    <Compile Include="Models\ObrtModels\Racun.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

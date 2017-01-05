@@ -8,19 +8,20 @@ using System.Web;
 namespace EvidencijaRacunaObrta.Models.ObrtModels
 {
     [Table("RacunFooter")]
-    public class RacunFooter : ModelBase<int>
+    public class FooterTemplate : ModelBase<int>
     {
-        public RacunFooter()
+        public FooterTemplate()
         {
-            Racuni = new List<ObrtRacun>();
+            Racuni = new List<Racun>();
         }
 
         public string PdvInfo { get; set; }
         public string CijenaSlovima { get; set; }
         public string UplataInfo { get; set; }
-        public List<ObrtRacun> Racuni { get; set; }
-        
-        public ObrtDetalj ObrtDetalj { get; set; }
-        public string UplataInfoSRacunom { get { return string.Format(UplataInfo, ObrtDetalj.ZiroRacun); } }
+        public List<Racun> Racuni { get; set; }
+
+        public int ObrtId { get; set; }
+        public Obrt Obrt { get; set; }
+        public string UplataInfoSRacunom { get { return string.Format(UplataInfo, Obrt.ZiroRacun); } }
     }
 }

@@ -13,10 +13,10 @@ namespace EvidencijaRacunaObrta.Models.ObrtModels
         public EvidencijaContext() : base("name=EvidencijaConnection")
         {
         }
-        public virtual DbSet<ObrtKlijent> Klijenti { get; set; }
-        public virtual DbSet<ObrtDetalj> DetaljiObrta { get; set; }
-        public virtual DbSet<RacunFooter> FooteriRacuna { get; set; }
-        public virtual DbSet<ObrtRacun> Racuni { get; set; }
-        public virtual DbSet<ObrtStavka> Stavke { get; set; }
+        public virtual DbSet<Klijent> Klijenti { get; set; }
+        public virtual DbSet<Obrt> Obrti { get; set; }
+        public virtual DbSet<FooterTemplate> FooteriRacuna { get; set; }
+        public virtual DbSet<Racun> Racuni { get; set; }
+        public virtual DbSet<Stavka> Stavke { get; set; }
     }
 }

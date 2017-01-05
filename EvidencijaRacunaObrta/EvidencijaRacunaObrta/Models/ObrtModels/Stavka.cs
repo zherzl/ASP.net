@@ -7,11 +7,11 @@ using System.Web;
 
 namespace EvidencijaRacunaObrta.Models.ObrtModels
 {
-    [Table("ObrtStavka")]
-    public class ObrtStavka : ModelBase<int>
+    [Table("Stavka")]
+    public class Stavka : ModelBase<int>
     {
         public int RacunId { get; set; }
-        public ObrtRacun Racun { get; set; }
+        public virtual Racun Racun { get; set; }
         public string UslugaOpis { get; set; }
         public decimal Cijena { get; set; }
         public int Kolicina { get; set; }

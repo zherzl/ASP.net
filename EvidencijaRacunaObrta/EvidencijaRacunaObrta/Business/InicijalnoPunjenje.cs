@@ -23,7 +23,7 @@ namespace EvidencijaRacunaObrta.Business
             response.Success = true;
             try
             {
-                db.DetaljiObrta.Add(CreateObrtDetalj(userId));
+                db.Obrti.Add(CreateObrtDetalj(userId));
                 db.Klijenti.AddRange(Klijenti(userId));
                 db.FooteriRacuna.Add(RacunFooter(userId));
                 db.SaveChanges();
@@ -37,9 +37,9 @@ namespace EvidencijaRacunaObrta.Business
 
             return response;
         }
-        public ObrtDetalj CreateObrtDetalj(int userId)
+        public Obrt CreateObrtDetalj(int userId)
         {
-            ObrtDetalj od = new ObrtDetalj();
+            Obrt od = new Obrt();
             od.NazivObrta = "LH PROGRAMMING";
             od.ObrtOpis = "obrt za USLUGE";
             od.Vlasnik = "Zlatko Herzl";
@@ -49,48 +49,51 @@ namespace EvidencijaRacunaObrta.Business
             od.Grad = "Zagreb";
             od.OIB = "89485468009";
             od.ZiroRacun = "HR5124840081107499065";
-            
+            od.UserId = userId;
             return od;
         }
 
 
-        public List<ObrtKlijent> Klijenti(int userId)
+        public List<Klijent> Klijenti(int userId)
         {
-            List<ObrtKlijent> klijenti = new List<ObrtKlijent>();
+            List<Klijent> klijenti = new List<Klijent>();
             klijenti.Add(CreateObrtKlijentAlgebra(userId));
             klijenti.Add(CreateObrtKlijentVUA(userId));
             return klijenti;
         }
 
-        private ObrtKlijent CreateObrtKlijentAlgebra(int userId)
+        private Klijent CreateObrtKlijentAlgebra(int userId)
         {
-            ObrtKlijent ok = new ObrtKlijent();
+            Klijent ok = new Klijent();
             ok.NazivKlijenta = "Algebra d.o.o.";
             ok.Ulica = "Maksimirska";
             ok.KucniBroj = "58a";
             ok.PostanskiBroj = "10000";
             ok.Grad = "Zagreb";
             ok.OIB = "24919984448";
+            ok.UserId = userId;
             return ok;
         }
 
-        private ObrtKlijent CreateObrtKlijentVUA(int userId)
+        private Klijent CreateObrtKlijentVUA(int userId)
         {
-            ObrtKlijent ok = new ObrtKlijent();
+            Klijent ok = new Klijent();
             ok.NazivKlijenta = "Visoko Učilište Algebra";
             ok.Ulica = "Ilica";
             ok.KucniBroj = "212";
             ok.PostanskiBroj = "10000";
             ok.Grad = "Zagreb";
             ok.OIB = "14575159920";
+            ok.UserId = userId;
             return ok;
         }
 
-        public RacunFooter RacunFooter(int userId)
+        public FooterTemplate RacunFooter(int userId)
         {
-            RacunFooter rf = new RacunFooter();
+            FooterTemplate rf = new FooterTemplate();
             rf.PdvInfo = "Izdavatelj računa nije obveznik poreza na dodanu vrijednost sukladno čl. 90. st. 2. Zakona o porezu na dodanu vrijednost (NN 73/13).";
             rf.UplataInfo = "Uplatu izvršiti na žiro račun broj {0}. U rubriku poziv na broj molimo upišite broj računa.";
+            rf.UserId = userId;
             return rf;
         }
     }

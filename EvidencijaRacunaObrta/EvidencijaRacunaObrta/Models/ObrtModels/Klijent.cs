@@ -7,12 +7,12 @@ using System.Web;
 
 namespace EvidencijaRacunaObrta.Models.ObrtModels
 {
-    [Table("ObrtKlijent")]
-    public class ObrtKlijent : ModelBase<int>
+    [Table("Klijent")]
+    public class Klijent : ModelBase<int>
     {
-        public ObrtKlijent()
+        public Klijent()
         {
-            Racuni = new List<ObrtRacun>();
+            Racuni = new List<Racun>();
         }
         [StringLength(50)]
         public string NazivKlijenta { get; set; }
@@ -26,8 +26,10 @@ namespace EvidencijaRacunaObrta.Models.ObrtModels
         public string Grad { get; set; }
         [StringLength(11, MinimumLength = 11, ErrorMessage = "OIB mora imati 11 znakova")]
         public string OIB { get; set; }
-        public List<ObrtRacun> Racuni { get; set; }
-        
-        public ObrtDetalj ObrtDetalj { get; set; }
+        public virtual List<Racun> Racuni { get; set; }
+
+        [Required]
+        public int ObrtId { get; set; }
+        public virtual Obrt Obrt { get; set; }
     }
 }

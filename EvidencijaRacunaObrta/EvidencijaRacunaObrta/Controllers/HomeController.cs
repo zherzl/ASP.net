@@ -11,11 +11,12 @@ namespace EvidencijaRacunaObrta.Controllers
 {
     public class HomeController : BaseController
     {
-        
+        [Authorize]
         public ActionResult Index()
         {
+            
             EvidencijaContext db = new EvidencijaContext();
-            int zapisa = db.DetaljiObrta.Where(x => x.UserId == CurrentUserId).Count();
+            int zapisa = db.Obrti.Where(x => x.UserId == CurrentUserId).Count();
 
             if (zapisa == 0)
             {
@@ -28,7 +29,7 @@ namespace EvidencijaRacunaObrta.Controllers
                 }
             }
             
-            List<ObrtRacun> racuni = db.Racuni.ToList();
+            List<Racun> racuni = db.Racuni.ToList();
 
             //DisplayError("Greška je probna");
             return View(racuni);

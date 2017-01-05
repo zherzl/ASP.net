@@ -8,7 +8,7 @@ namespace EvidencijaRacunaObrta.Business.Request
 {
     public class CreateRacunRequest : RequestBase
     {
-        public ObrtRacun ObrtRacun { get; set; }
+        public Racun ObrtRacun { get; set; }
 
     }
 }
