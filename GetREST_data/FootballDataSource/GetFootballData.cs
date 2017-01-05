@@ -40,7 +40,7 @@ namespace FootballDataSource
 
             // easily add HTTP Headers
             request.AddHeader("X-Auth-Token", "1da45b53956c477dbca8af43bd407172");
-
+            request.AddHeader("X-Response-Control", "minified");
             // add files to upload (works with compatible verbs)
             //request.AddFile(path);
 

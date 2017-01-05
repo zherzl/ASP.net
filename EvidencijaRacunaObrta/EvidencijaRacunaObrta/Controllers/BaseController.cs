@@ -43,6 +43,11 @@ namespace EvidencijaRacunaObrta.Controllers
             return rolesRes;
         }
 
-        
+    
+        public void DisplayError(string error)
+        {
+            ViewBag.error = error;
+        }    
     }
+
 }

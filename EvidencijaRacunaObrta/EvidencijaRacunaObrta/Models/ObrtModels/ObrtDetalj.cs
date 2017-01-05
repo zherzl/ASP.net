@@ -10,6 +10,11 @@ namespace EvidencijaRacunaObrta.Models.ObrtModels
     [Table("ObrtDetalj")]
     public class ObrtDetalj : ModelBase<int>
     {
+        public ObrtDetalj()
+        {
+            Racuni = new List<ObrtRacun>();
+        }
+
         [StringLength(50)]
         public string NazivObrta { get; set; }
         [StringLength(500)]
@@ -28,5 +33,7 @@ namespace EvidencijaRacunaObrta.Models.ObrtModels
         public string OIB { get; set; }
         [StringLength(21, MinimumLength = 21, ErrorMessage = "Žiro račun mora imati 21 znak (uključujući HR)")]
         public string ZiroRacun { get; set; }
+
+        public List<ObrtRacun> Racuni { get; set; }
     }
 }
