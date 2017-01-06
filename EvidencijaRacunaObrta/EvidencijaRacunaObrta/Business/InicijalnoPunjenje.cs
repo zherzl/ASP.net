@@ -23,9 +23,16 @@ namespace EvidencijaRacunaObrta.Business
             response.Success = true;
             try
             {
-                db.Obrti.Add(CreateObrtDetalj(userId));
-                db.Klijenti.AddRange(Klijenti(userId));
-                db.FooteriRacuna.Add(RacunFooter(userId));
+                Obrt obrt = CreateObrtDetalj(userId);
+                db.Obrti.Add(obrt);
+                List<Klijent> k = Klijenti(userId);
+                db.Klijenti.AddRange(k);
+                FooterTemplate footer = RacunFooter(userId);
+                db.FooteriRacuna.Add(footer);
+                Racun r = JedanRacun(userId, footer, obrt.ZiroRacun, k[0]);
+                db.Racuni.Add(r);
+                Stavka s = JednaStavka(userId, r.Id);
+                db.Stavke.Add(s);
                 db.SaveChanges();
 
             }
@@ -95,6 +102,38 @@ namespace EvidencijaRacunaObrta.Business
             rf.UplataInfo = "Uplatu izvršiti na žiro račun broj {0}. U rubriku poziv na broj molimo upišite broj računa.";
             rf.UserId = userId;
             return rf;
+        }
+
+        public Racun JedanRacun(int userId, FooterTemplate footer, string ziro, Klijent k)
+        {
+            Racun r = new Racun();
+            r.BrojRacuna = "2016-01";
+            r.DatumVrijeme = DateTime.Now.AddDays(-365);
+            r.FiskalniBrojRacuna = "1/1/1";
+            r.FooterCijenaSlovima = "devetišestokn";
+            r.FooterPdvInfo = footer.PdvInfo;
+            r.FooterUplataInfo = footer.UplataInfo;
+            r.OznakaOperatera = "ZH";
+            r.ZiroRacun = ziro;
+            r.Mjesto = "Zagreb";
+            r.IznosRacuna = 9600;
+            r.UserId = userId;
+            r.Klijent = k;
+            
+            return r;
+        }
+
+        public Stavka JednaStavka(int userId, int racunId)
+        {
+            Stavka s = new Stavka();
+            s.UslugaOpis = "Rad na ALPS sustavu od 01.11.2016-30.11.2016. prema ugovoru o suradnji od 01.11.2016.";
+            s.UserId = userId;
+            s.RacunId = racunId;
+            s.Kolicina = 1;
+            s.Cijena = 9600;
+            s.RacunId = racunId;
+
+            return s;
         }
     }
 }

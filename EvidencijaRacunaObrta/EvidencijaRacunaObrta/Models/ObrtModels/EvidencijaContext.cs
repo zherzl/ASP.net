@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace EvidencijaRacunaObrta.Models.ObrtModels
 {
@@ -13,6 +14,13 @@ namespace EvidencijaRacunaObrta.Models.ObrtModels
         public EvidencijaContext() : base("name=EvidencijaConnection")
         {
         }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            base.OnModelCreating(modelBuilder);
+        }
+
         public virtual DbSet<Klijent> Klijenti { get; set; }
         public virtual DbSet<Obrt> Obrti { get; set; }
         public virtual DbSet<FooterTemplate> FooteriRacuna { get; set; }

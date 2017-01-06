@@ -1,0 +1,157 @@
+﻿@using EvidencijaRacunaObrta.Business.Response
+@model CreateRacunResponse
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<link href="~/Content/tableStavkaStyle.css" rel="stylesheet" />
+
+<label>Template stavke za dodavanje</label>
+<select id="ddlStavke" class="form-control"></select>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <div class="col-md-3">
+                <label>Odabir klijenta</label>
+                <select class="form-control">
+                    @foreach (var item in Model.Klijenti)
+                    {
+                        if (item.IsDefaultKlijent)
+                        {
+                            <option selected="selected" value="@item.Id">@item.NazivKlijenta | @item.OIB</option>
+                        }
+                        else
+                        {
+                            <option value="@item.Id">@item.NazivKlijenta | @item.OIB</option>
+                        }
+                    }
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.Racun.BrojRacuna, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-2">
+                <label>Broj računa</label>
+                @Html.EditorFor(model => model.Racun.BrojRacuna, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Racun.BrojRacuna, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                <label>Fiskalni broj računa</label>
+                @Html.EditorFor(model => model.Racun.FiskalniBrojRacuna, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Racun.FiskalniBrojRacuna, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @*@Html.LabelFor(model => model.Racun.Mjesto, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <label>Mjesto</label>
+                @Html.EditorFor(model => model.Racun.Mjesto, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Racun.Mjesto, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                @*@Html.LabelFor(model => model.Racun.DatumVrijeme, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <label>Datum i vrijeme</label>
+                @Html.EditorFor(model => model.Racun.DatumVrijeme, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Racun.DatumVrijeme, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.Racun.OznakaOperatera, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-2">
+                <label>Oznaka operatera</label>
+                @Html.EditorFor(model => model.Racun.OznakaOperatera, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Racun.OznakaOperatera, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-2">
+                <label>Valuta plaćanja</label>
+                @Html.EditorFor(model => model.Racun.ValutaPlacanja, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Racun.ValutaPlacanja, "", new { @class = "text-danger" })
+            </div>
+            @*@Html.LabelFor(model => model.Racun.NacinPlacanja, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-2">
+                <label>Način plaćanja</label>
+                @Html.EditorFor(model => model.Racun.NacinPlacanja, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Racun.NacinPlacanja, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-3">
+                <label>Žiro račun</label>
+                @Html.EditorFor(model => model.Racun.ZiroRacun, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Racun.ZiroRacun, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.Racun.ZiroRacun, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
+            <div class="col-md-4">
+                <label>Footer pdv info</label>
+                @Html.EditorFor(model => model.Racun.FooterPdvInfo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Racun.FooterPdvInfo, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-4">
+                <label>Footer uplata info</label>
+                @Html.EditorFor(model => model.Racun.FooterUplataInfo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Racun.FooterUplataInfo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @*@Html.LabelFor(model => model.Racun.FooterCijenaSlovima, htmlAttributes: new { @class = "control-label col-md-2" })*@
+            <div class="col-md-4">
+                <label>Cijena slovima</label>
+                @Html.EditorFor(model => model.Racun.FooterCijenaSlovima, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Racun.FooterCijenaSlovima, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-4">
+                <label>Iznos računa</label>
+                @Html.EditorFor(model => model.Racun.IznosRacuna, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Racun.IznosRacuna, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-offset-0 col-md-2">
+                <br />
+                <input type="submit" value="Create" class="btn btn-warning" />
+            </div>
+        </div>
+
+
+        @Html.HiddenFor(model => model.Racun.UserId, new { htmlAttributes = new { @class = "" } })
+
+        <div class="form-group">
+
+        </div>
+    </div>
+    <div>
+        <table id="stavkaTable" class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Usluga</th>
+                    <th>Cijena</th>
+                    <th>Količina</th>
+                    <th>Jedinica</th>
+                    <th>Ukupno</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+}
+<input type="button" name="name" value="Go" id="btnGo" />
+
+<div>
+    @Html.ActionLink("Back to List", "Index", "Home")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script src="~/Scripts/MyScripts/StavkaScript.js"></script>

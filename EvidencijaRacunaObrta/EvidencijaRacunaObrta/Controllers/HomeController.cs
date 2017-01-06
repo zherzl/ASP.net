@@ -35,11 +35,7 @@ namespace EvidencijaRacunaObrta.Controllers
             return View(racuni);
         }
 
-        public ActionResult CreateRacun()
-        {
-
-            return View();
-        }
+      
 
         [Authorize(Roles = "AdminMain, ObicnaRola")]
         public ActionResult About()

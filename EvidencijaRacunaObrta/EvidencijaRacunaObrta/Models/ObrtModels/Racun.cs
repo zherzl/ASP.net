@@ -23,21 +23,14 @@ namespace EvidencijaRacunaObrta.Models.ObrtModels
         public string JedinicaPlacanja { get; set; } = "dana";
         public string NacinPlacanja { get; set; } = "Transakcijski račun";
         public string ZiroRacun { get; set; }
-        public int ObrtDetaljId { get; set; }
-        [ForeignKey("ObrtDetaljId")]
-        public Obrt ObrtDetalj { get; set; }
-        public int ObrtKlijentId { get; set; }
-        public Klijent Klijent { get; set; }
+        public int KlijentId { get; set; }
+        public virtual Klijent Klijent { get; set; }
 
-        public List<Stavka> Stavke { get; set; }
+        public virtual List<Stavka> Stavke { get; set; }
         decimal _iznos;
         public decimal IznosRacuna
         {
-            get
-            {
-                _iznos = Stavke.Select(x => x.UkupnoCijena).Sum();
-                return _iznos;
-            }
+            get { return _iznos; }
             set { _iznos = value; }
         }
 

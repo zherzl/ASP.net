@@ -12,7 +12,6 @@ namespace EvidencijaRacunaObrta.Models.ObrtModels
     {
         public Obrt()
         {
-            Racuni = new List<Racun>();
             Klijenti = new List<Klijent>();
             Footeri = new List<FooterTemplate>();
         }
@@ -36,7 +35,6 @@ namespace EvidencijaRacunaObrta.Models.ObrtModels
         [StringLength(21, MinimumLength = 21, ErrorMessage = "Žiro račun mora imati 21 znak (uključujući HR)")]
         public string ZiroRacun { get; set; }
 
-        public virtual List<Racun> Racuni { get; set; }
         public virtual List<Klijent> Klijenti { get; set; }
         public virtual List<FooterTemplate> Footeri { get; set; }
     }

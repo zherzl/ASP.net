@@ -31,5 +31,6 @@ namespace EvidencijaRacunaObrta.Models.ObrtModels
         [Required]
         public int ObrtId { get; set; }
         public virtual Obrt Obrt { get; set; }
+        public bool IsDefaultKlijent { get; set; }
     }
 }

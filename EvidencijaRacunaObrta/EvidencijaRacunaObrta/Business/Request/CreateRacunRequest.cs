@@ -8,7 +8,16 @@ namespace EvidencijaRacunaObrta.Business.Request
 {
     public class CreateRacunRequest : RequestBase
     {
-        public Racun ObrtRacun { get; set; }
+        public int? RacunId { get; set; }
+    }
+
+    public class CreateStavkeRequest : RequestBase
+    {
+        public int? StavkaId { get; set; }
+    }
+
+    public class GetTop10StavkeRequest : RequestBase
+    {
 
     }
 }
