@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Knockout.DataService.Mapping;
+using System.Data.Entity;
 
 namespace Knockout_EF.Controllers
 {
@@ -16,6 +17,8 @@ namespace Knockout_EF.Controllers
             using (AdventureWorksContext db = new AdventureWorksContext())
             {
                 List<DrzavaGradViewModel> gradovi = db.Gradovi.ToList().ToGradViewModel();
+                List<Drzava> drzave = db.Drzave.Include(b => b.Gradovi).ToList();
+                   
                 return View(gradovi);
             }
         }
