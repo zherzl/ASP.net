@@ -1,0 +1,32 @@
+﻿
+* {
+  box-sizing: border-box;
+}
+
+.features {
+  margin: 8px;
+}
+
+.feature {
+  background: #ccc;
+  border: 8px solid #fff;
+  height: 400px;
+  float: left;
+  
+  &-1,
+  &-2 {
+    width: 50%;
+  }
+  
+  &-3,
+  &-4 {
+    width: 25%
+  }
+  
+  &-2,
+  &-3,
+  &-4 {
+    height: 200px;
+  }
+  
+}
