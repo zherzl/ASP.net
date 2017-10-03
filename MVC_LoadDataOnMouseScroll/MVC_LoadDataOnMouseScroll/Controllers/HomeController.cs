@@ -38,7 +38,7 @@ namespace MVC_LoadDataOnMouseScroll.Controllers
             return Json(custQuery.ToList());
         }
 
-        public ActionResult Contact()
+        public ActionResult Contact2()
         {
             ViewBag.Message = "Your contact page.";
 
