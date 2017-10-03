@@ -18,6 +18,7 @@ namespace EvidencijaRacunaObrta.Models.ObrtModels
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            Database.SetInitializer<EvidencijaContext>(new CreateDatabaseIfNotExists<EvidencijaContext>());
             base.OnModelCreating(modelBuilder);
         }
 
